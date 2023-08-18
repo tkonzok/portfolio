@@ -339,9 +339,11 @@ nav h3 {
   color: #fff;
 }
 
-.project-carousel-container {
+.projects-container > div {
   width: min(1200px, 100%);
-  height: 100%;
+}
+
+.project-carousel-container {
   position: relative;
   display: flex;
   justify-content: center;
@@ -395,36 +397,140 @@ nav h3 {
 }
 
 .penultimateProject {
-  transform: translateX(-100vw);
+  right: 12.5vw;
   opacity: 0;
 }
+
+.penultimateProject[toprev="1"] {
+  animation-name: to-right-0-5;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
 .prevProject {
-  transform: translateX(-50vw);
+  right: 12.5vw;
   opacity: 0.5;
 }
+
+.prevProject[toprev="1"] {
+  animation-name: to-right-1;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+.prevProject[tonext="1"] {
+  animation-name: to-left-0;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
 .currentProject {
-  transform: translateX(0);
+  left: 0;
+  right: 0;
   opacity: 1;
 }
+
+.currentProject[toprev="1"] {
+  animation-name: current-to-prev;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+.currentProject[tonext="1"] {
+  animation-name: to-left-0-5;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
 .nextProject {
-  transform: translateX(50vw);
+  left: 12.5vw;
   opacity: 0.5;
 }
+
+.nextProject[toprev="1"] {
+  animation-name: to-right-0;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+.nextProject[tonext="1"] {
+  animation-name: to-left-1;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
 .nextButOneProject {
-  transform: translateX(100vw);
+  left: 12.5vw;
   opacity: 0;
+}
+
+.nextButOneProject[tonext="1"] {
+  animation-name: to-left-0-5;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes to-left-0 {
+  100% {
+    transform: translateX(-62.5vw);
+    opacity: 0;
+  }
+}
+
+@keyframes to-left-0-5 {
+  100% {
+    transform: translateX(-62.5vw);
+    opacity: 0.5;
+  }
+}
+
+@keyframes to-left-1 {
+  100% {
+    transform: translateX(-62.5vw);
+    opacity: 1;
+  }
+}
+
+@keyframes to-right-0 {
+  100% {
+    transform: translateX(62.5vw);
+    opacity: 0;
+  }
+}
+
+@keyframes to-right-0-5 {
+  100% {
+    transform: translateX(62.5vw);
+    opacity: 0.5;
+  }
+}
+
+@keyframes to-right-1 {
+  100% {
+    transform: translateX(62.5vw);
+    opacity: 1;
+  }
+}
+
+@keyframes current-to-prev {
+  100% {
+    left: 62.5vw;
+    opacity: 0.5;
+  }
 }
 
 .prevButton {
   color: #fff;
   position: absolute;
-  left: 50%;
+  left: 12.5vw;
+  width: 12.5vw;
 }
 
 .nextButton {
   color: #fff;
   position: absolute;
-  left: 60%;
+  left: 75vw;
+  width: 12.5vw;
 }
 
 /* CONTACT */

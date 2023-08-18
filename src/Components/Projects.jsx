@@ -9,7 +9,7 @@ import Open from "../assets/icons/open-in-new.svg";
 import OpenWhite from "../assets/icons/open-in-new_white.svg";
 
 function ProjectCarousel() {
-  const animationDuration = 1000; // milliseconds
+  const animationDuration = 500; // milliseconds
   const numberProjectsToShow = 5; // number of projects to fetch from data to prevent showing the older ones
   const [penultimateProject, setPenultimateProject] = useState(
     numberProjectsToShow - 1
@@ -30,7 +30,7 @@ function ProjectCarousel() {
     setToPrev(1);
     setTimeout(() => {
       if (penultimateProject === 0) {
-        setPenultimateProject(numberProjectsToShow);
+        setPenultimateProject(numberProjectsToShow - 1);
         setPrevProject(penultimateProject);
         setCurrProject(prevProject);
         setNextProject(currProject);
@@ -48,7 +48,7 @@ function ProjectCarousel() {
   function handleNextClick() {
     setToNext(1);
     setTimeout(() => {
-      if (nextButOneProject === numberProjectsToShow) {
+      if (nextButOneProject === numberProjectsToShow - 1) {
         setPenultimateProject(prevProject);
         setPrevProject(currProject);
         setCurrProject(nextProject);
@@ -86,16 +86,10 @@ function ProjectCarousel() {
           <p className="project-name">
             {Dataset.data[penultimateProject].title}
           </p>
-          <a
-            href={Dataset.data[penultimateProject].githubwhite}
-            className="project-link"
-          >
+          <a href="#" className="project-link">
             <img src={GithubWhite} alt="Link to Project Code on Github" />
           </a>
-          <a
-            href={Dataset.data[penultimateProject].livePreview}
-            className="project-link"
-          >
+          <a href="#" className="project-link">
             <img src={OpenWhite} alt="Link To Project Webpage" />
           </a>
         </div>
@@ -116,16 +110,10 @@ function ProjectCarousel() {
             />
           </a>
           <p className="project-name">{Dataset.data[prevProject].title}</p>
-          <a
-            href={Dataset.data[prevProject].githubwhite}
-            className="project-link"
-          >
-            <img src={GithubWhite} alt="Link to Project Code on Github" />
+          <a href="#" className="project-link">
+            <img src={GithubWhite} />
           </a>
-          <a
-            href={Dataset.data[prevProject].livePreview}
-            className="project-link"
-          >
+          <a href="#" className="project-link">
             <img src={OpenWhite} alt="Link To Project Webpage" />
           </a>
         </div>
@@ -176,16 +164,10 @@ function ProjectCarousel() {
             />
           </a>
           <p className="project-name">{Dataset.data[nextProject].title}</p>
-          <a
-            href={Dataset.data[nextProject].githubwhite}
-            className="project-link"
-          >
+          <a href="#" className="project-link">
             <img src={GithubWhite} alt="Link to Project Code on Github" />
           </a>
-          <a
-            href={Dataset.data[nextProject].livePreview}
-            className="project-link"
-          >
+          <a href="#" className="project-link">
             <img src={OpenWhite} alt="Link To Project Webpage" />
           </a>
         </div>
@@ -208,16 +190,10 @@ function ProjectCarousel() {
           <p className="project-name">
             {Dataset.data[nextButOneProject].title}
           </p>
-          <a
-            href={Dataset.data[nextButOneProject].githubwhite}
-            className="project-link"
-          >
+          <a href="#" className="project-link">
             <img src={GithubWhite} alt="Link to Project Code on Github" />
           </a>
-          <a
-            href={Dataset.data[nextButOneProject].livePreview}
-            className="project-link"
-          >
+          <a href="#" className="project-link">
             <img src={OpenWhite} alt="Link To Project Webpage" />
           </a>
         </div>
