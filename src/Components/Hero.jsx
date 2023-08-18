@@ -18,7 +18,7 @@ function ProfileImage() {
       ref={ref}
       srcSet={`${ProfileImg160} 160w, ${ProfileImg320} 320w, ${ProfileImg640} 640w, ${ProfileImg960} 960w`}
       alt="Profile Picture"
-      className={inView ? "profile-img fade-in" : "profile-img"}
+      className={inView ? "profile-img fade-in-90" : "profile-img"}
     />
   );
 }

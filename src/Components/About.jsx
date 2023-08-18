@@ -21,19 +21,19 @@ function Links() {
         href="https://github.com/tkonzok"
         className={inView ? "link slide-in from-left delay1" : "link"}
       >
-        <img src={Github} alt="GitHub icon" className="github" />
+        <img src={GithubWhite} alt="GitHub icon" className="github" />
       </a>
       <a
         href="https://linkedin.com/in/tobias-konzok"
         className={inView ? "link slide-in from-left delay1-5" : "link"}
       >
-        <img src={Linkedin} alt="LinkedIN icon" className="linkedin" />
+        <img src={LinkedinWhite} alt="LinkedIN icon" className="linkedin" />
       </a>
       <a
         href="https://xing.com/profile/tobias_konzok"
         className={inView ? "link slide-in from-left delay2" : "link"}
       >
-        <img src={Xing} alt="Xing icon" className="xing" />
+        <img src={XingWhite} alt="Xing icon" className="xing" />
       </a>
     </div>
   );

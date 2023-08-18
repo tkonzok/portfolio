@@ -14,7 +14,7 @@ function ProjectCarousel() {
   const [penultimateProject, setPenultimateProject] = useState(
     numberProjectsToShow - 1
   );
-  const [prevProject, setPrevProject] = useState(numberProjectsToShow);
+  const [prevProject, setPrevProject] = useState(numberProjectsToShow - 1);
   const [currProject, setCurrProject] = useState(0);
   const [nextProject, setNextProject] = useState(1);
   const [nextButOneProject, setNextButOneProject] = useState(2);
