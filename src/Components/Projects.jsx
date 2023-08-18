@@ -28,6 +28,7 @@ function ProjectCarousel() {
 
   function handlePrevClick() {
     setToPrev(1);
+    console.log("animation start");
     setTimeout(() => {
       if (penultimateProject === 0) {
         setPenultimateProject(numberProjectsToShow - 1);
@@ -42,8 +43,15 @@ function ProjectCarousel() {
         setNextProject(currProject);
         setNextButOneProject(nextProject);
       }
+      console.log("content updated");
+      console.log(toPrev);
     }, animationDuration);
   }
+
+  useEffect(() => {
+    setToPrev(0);
+    setToNext(0);
+  }, [currProject]);
 
   function handleNextClick() {
     setToNext(1);
@@ -71,10 +79,6 @@ function ProjectCarousel() {
           className="penultimateProject project-card"
           toprev={toPrev}
           tonext={toNext}
-          onAnimationEnd={() => {
-            setToPrev(0);
-            setToNext(0);
-          }}
         >
           <a href={Dataset.data[penultimateProject].livePreview}>
             <img
@@ -97,10 +101,6 @@ function ProjectCarousel() {
           className="prevProject project-card"
           toprev={toPrev}
           tonext={toNext}
-          onAnimationEnd={() => {
-            setToPrev(0);
-            setToNext(0);
-          }}
         >
           <a href={Dataset.data[prevProject].livePreview}>
             <img
@@ -121,10 +121,6 @@ function ProjectCarousel() {
           className="currentProject project-card"
           toprev={toPrev}
           tonext={toNext}
-          onAnimationEnd={() => {
-            setToPrev(0);
-            setToNext(0);
-          }}
         >
           <a href={Dataset.data[currProject].livePreview}>
             <img
@@ -151,10 +147,6 @@ function ProjectCarousel() {
           className="nextProject project-card"
           toprev={toPrev}
           tonext={toNext}
-          onAnimationEnd={() => {
-            setToPrev(0);
-            setToNext(0);
-          }}
         >
           <a href={Dataset.data[nextProject].livePreview}>
             <img
@@ -175,10 +167,6 @@ function ProjectCarousel() {
           className="nextButOneProject project-card"
           toprev={toPrev}
           tonext={toNext}
-          onAnimationEnd={() => {
-            setToPrev(0);
-            setToNext(0);
-          }}
         >
           <a href={Dataset.data[nextButOneProject].livePreview}>
             <img

@@ -405,6 +405,7 @@ nav h3 {
   animation-name: to-right-0-5;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .prevProject {
@@ -416,12 +417,14 @@ nav h3 {
   animation-name: to-right-1;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .prevProject[tonext="1"] {
   animation-name: to-left-0;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .currentProject {
@@ -431,15 +434,17 @@ nav h3 {
 }
 
 .currentProject[toprev="1"] {
-  animation-name: current-to-prev;
+  animation-name: to-right-0-5;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .currentProject[tonext="1"] {
   animation-name: to-left-0-5;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .nextProject {
@@ -451,12 +456,14 @@ nav h3 {
   animation-name: to-right-0;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .nextProject[tonext="1"] {
   animation-name: to-left-1;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .nextButOneProject {
@@ -468,9 +475,18 @@ nav h3 {
   animation-name: to-left-0-5;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 @keyframes to-left-0 {
+  70% {
+    transform: translateX(-67.5vw);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(-62.5vw);
+    opacity: 0;
+  }
   100% {
     transform: translateX(-62.5vw);
     opacity: 0;
@@ -478,6 +494,14 @@ nav h3 {
 }
 
 @keyframes to-left-0-5 {
+  70% {
+    transform: translateX(-67.5vw);
+    opacity: 0.5;
+  }
+  80% {
+    transform: translateX(-62.5vw);
+    opacity: 0.5;
+  }
   100% {
     transform: translateX(-62.5vw);
     opacity: 0.5;
@@ -485,6 +509,14 @@ nav h3 {
 }
 
 @keyframes to-left-1 {
+  70% {
+    transform: translateX(-67.5vw);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(-62.5vw);
+    opacity: 1;
+  }
   100% {
     transform: translateX(-62.5vw);
     opacity: 1;
@@ -492,6 +524,14 @@ nav h3 {
 }
 
 @keyframes to-right-0 {
+  70% {
+    transform: translateX(67.5vw);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(62.5vw);
+    opacity: 0;
+  }
   100% {
     transform: translateX(62.5vw);
     opacity: 0;
@@ -499,6 +539,14 @@ nav h3 {
 }
 
 @keyframes to-right-0-5 {
+  70% {
+    transform: translateX(67.5vw);
+    opacity: 0.5;
+  }
+  80% {
+    transform: translateX(62.5vw);
+    opacity: 0.5;
+  }
   100% {
     transform: translateX(62.5vw);
     opacity: 0.5;
@@ -506,16 +554,17 @@ nav h3 {
 }
 
 @keyframes to-right-1 {
-  100% {
+  70% {
+    transform: translateX(67.5vw);
+    opacity: 1;
+  }
+  80% {
     transform: translateX(62.5vw);
     opacity: 1;
   }
-}
-
-@keyframes current-to-prev {
   100% {
-    left: 62.5vw;
-    opacity: 0.5;
+    transform: translateX(62.5vw);
+    opacity: 1;
   }
 }
 
