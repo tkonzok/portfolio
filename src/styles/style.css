@@ -381,7 +381,7 @@ nav h3 {
   overflow: hidden;
   margin: auto;
   border-radius: clamp(8px, calc(min(840px, 80vw, 60vh) * 0.02), 16px);
-  box-shadow: 2px 2px 10px 2px #000:
+  box-shadow: 2px 2px 10px 2px #000;
 }
 
 .project-carousel {
@@ -401,7 +401,7 @@ nav h3 {
   overflow: hidden;
   margin: 0 auto;
   background-color: #666666;
-  box-shadow: 2px 2px 10px 2px #000:
+  box-shadow: 2px 2px 10px 2px #000;
 }
 
 .project-card > a:first-child {
@@ -671,11 +671,11 @@ nav h3 {
 }
 
 .turn-left-90 {
-  transform: rotate(-90deg)
+  transform: rotate(-90deg);
 }
 
 .turn-right-90 {
-  transform: rotate(90deg)
+  transform: rotate(90deg);
 }
 
 /* CONTACT */
@@ -720,7 +720,7 @@ nav h3 {
 .contact-img {
   height: 50vh;
   object-fit: cover;
-  box-shadow: 2px 2px 10px 2px #000:
+  box-shadow: 2px 2px 10px 2px #000;
 }
 
 /* REG MOBILE */
@@ -793,7 +793,6 @@ nav h3 {
 
 /* PROJECTS */
 @media (min-aspect-ratio: 0.75) {
-
   @keyframes to-left-0 {
     70% {
       transform: translateX(-70vh);
