@@ -185,6 +185,13 @@ function ProjectCarousel() {
             <img src={OpenWhite} alt="Link To Project Webpage" />
           </a>
         </div>
+
+        <button onClick={handlePrevClick} className="prevButton">
+          PREV
+        </button>
+        <button onClick={handleNextClick} className="nextButton">
+          NEXT
+        </button>
       </div>
     );
   }
@@ -193,12 +200,6 @@ function ProjectCarousel() {
     <div>
       <div className="project-carousel-container">
         <ProjectCards />
-        <button onClick={handlePrevClick} className="prevButton">
-          PREV
-        </button>
-        <button onClick={handleNextClick} className="nextButton">
-          NEXT
-        </button>
       </div>
     </div>
   );
