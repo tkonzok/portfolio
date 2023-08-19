@@ -216,21 +216,22 @@ nav h3 {
   align-items: center;
   color: #fff;
   z-index: 5;
+  scroll-snap-align: center;
 }
 
 .hero {
-  width: min(1200px, 100%);
+  width: 100vw;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: start;
   text-align: center;
-  scroll-snap-align: start;
+  box-shadow: 0px 0px 20vh 20vh #000;
 }
 
 .profile-img-container {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   background-color: #000;
   padding-top: 7vh;
 }
@@ -247,7 +248,7 @@ nav h3 {
   width: 100%;
   position: absolute;
   top: 20vw;
-  left: 35vw;
+  left: min(420px, 35vw);
 }
 
 .infos {
@@ -301,19 +302,23 @@ nav h3 {
   justify-content: center;
   align-items: center;
   color: #fff;
+  scroll-snap-align: center;
 }
 
 .about-me {
   width: min(1200px, 100%);
-  height: 100%;
-  padding: 5rem 10vw 5rem;
+  margin: 5rem 10vw 5rem;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-size: min(3.5vw, 1.5vh, 1.5rem);
-  scroll-snap-align: center;
+  background-color: #3d3e40;
+  border-radius: clamp(8px, calc(min(840px, 80vw, 60vh) * 0.02), 16px);
+  box-shadow: 2px 2px 10px 2px #000;
+  z-index: 5;
 }
 
 .links {
@@ -366,6 +371,7 @@ nav h3 {
 
 .projects-container > div {
   width: min(1200px, 100%);
+  scroll-snap-align: center;
 }
 
 .project-carousel-container {
@@ -374,9 +380,8 @@ nav h3 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  scroll-snap-align: center;
   padding: 24px;
-  background-color: #faebd7;
+  background-color: #cfb99c;
   max-width: min(1200px, 125vh);
   overflow: hidden;
   margin: auto;
@@ -447,6 +452,7 @@ nav h3 {
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
 }
 
 .prevProject {
@@ -459,6 +465,7 @@ nav h3 {
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
 }
 
 .prevProject[tonext="1"] {
@@ -466,6 +473,7 @@ nav h3 {
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
 }
 
 .currentProject {
@@ -479,6 +487,7 @@ nav h3 {
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
 }
 
 .currentProject[tonext="1"] {
@@ -486,6 +495,7 @@ nav h3 {
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
 }
 
 .nextProject {
@@ -498,6 +508,7 @@ nav h3 {
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
 }
 
 .nextProject[tonext="1"] {
@@ -505,6 +516,7 @@ nav h3 {
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
 }
 
 .nextButOneProject {
@@ -517,6 +529,7 @@ nav h3 {
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
 }
 
 @keyframes to-left-0 {
@@ -670,6 +683,14 @@ nav h3 {
   margin: auto;
 }
 
+.prevButton > img {
+  margin-right: 50%;
+}
+
+.nextButton > img {
+  margin-left: 50%;
+}
+
 .turn-left-90 {
   transform: rotate(-90deg);
 }
@@ -686,6 +707,7 @@ nav h3 {
   justify-content: center;
   align-items: center;
   color: #fff;
+  scroll-snap-align: center;
 }
 
 .contact-container > div {
@@ -696,7 +718,6 @@ nav h3 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  scroll-snap-align: center;
 }
 
 .contact-details {
@@ -747,7 +768,7 @@ nav h3 {
 
   /* CONTACT */
 
-  .contact-details {
+  .contact-container > div {
     font-size: min(3.5vw, 1.75vh, 1.5rem);
   }
 }
@@ -757,23 +778,28 @@ nav h3 {
   body {
     font-size: min(4vw, 2vh, 2rem);
   }
-}
-/* HERO */
-@media (min-width: 1024px) {
-}
+  /* HERO */
 
-/* ABOUT */
-@media (min-width: 1024px) {
-}
+  .about-me {
+    font-size: min(4vw, 2vh, 2rem);
+  }
 
-/* PROJECTS */
-@media (min-width: 1024px) {
-}
+  /* ABOUT */
 
-/* CONTACT */
-@media (min-width: 1024px) {
+  .about-me {
+    font-size: min(4vw, 2vh, 2rem);
+  }
+
+  /* PROJECTS */
+
+  .project-card {
+    font-size: min(4vw, 2vh, 2rem);
+  }
+
+  /* CONTACT */
+
   .contact-container > div {
-    font-size: min(3.5vw, 1.75vh, 1.75rem);
+    font-size: min(4vw, 2vh, 2rem);
   }
 }
 
