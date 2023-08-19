@@ -1,12 +1,14 @@
 import PropTypes from "prop-types";
 import { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
+import { Swipeable } from "react-swipeable";
 import "../styles/style.css";
 import Dataset from "../assets/data.json";
 import Github from "../assets/icons/github.svg";
 import GithubWhite from "../assets/icons/github_white.svg";
 import Open from "../assets/icons/open-in-new.svg";
 import OpenWhite from "../assets/icons/open-in-new_white.svg";
+import ArrowUp from "./assets/icons/arrow-up-bold-circle.svg";
 
 function ProjectCarousel() {
   const animationDuration = 500; // milliseconds
@@ -72,6 +74,14 @@ function ProjectCarousel() {
     }, animationDuration);
   }
 
+  const config = {
+    delta: 10,
+    preventDefaultTouchMove: false,
+    trackTouch: true,
+    trackMouse: true,
+    rotationAngle: 0,
+  };
+
   function ProjectCards() {
     return (
       <div className="project-carousel">
@@ -80,7 +90,7 @@ function ProjectCarousel() {
           toprev={toPrev}
           tonext={toNext}
         >
-          <a href={Dataset.data[penultimateProject].livePreview}>
+          <a href="#">
             <img
               src={imageLinks[penultimateProject]}
               alt="Penultimate Project"
@@ -102,7 +112,7 @@ function ProjectCarousel() {
           toprev={toPrev}
           tonext={toNext}
         >
-          <a href={Dataset.data[prevProject].livePreview}>
+          <a href="#">
             <img
               src={imageLinks[prevProject]}
               alt="Previous Project"
@@ -117,38 +127,42 @@ function ProjectCarousel() {
             <img src={OpenWhite} alt="Link To Project Webpage" />
           </a>
         </div>
-        <div
-          className="currentProject project-card"
-          toprev={toPrev}
-          tonext={toNext}
+        <Swipeable
+          className="swipe"
+          onSwipedLeft={(eventData) => handleNextClick()}
+          {...config}
+          onSwipedRight={(eventData) => handlePrevClick()}
         >
-          <a href={Dataset.data[currProject].livePreview}>
-            <img
-              src={imageLinks[currProject]}
-              alt="Current Project"
-              className="project-image"
-            />
-          </a>
-          <p className="project-name">{Dataset.data[currProject].title}</p>
-          <a
-            href={Dataset.data[currProject].githubwhite}
-            className="project-link"
+          <div
+            className="currentProject project-card"
+            toprev={toPrev}
+            tonext={toNext}
           >
-            <img src={GithubWhite} alt="Link to Project Code on Github" />
-          </a>
-          <a
-            href={Dataset.data[currProject].livePreview}
-            className="project-link"
-          >
-            <img src={OpenWhite} alt="Link To Project Webpage" />
-          </a>
-        </div>
+            <a href={Dataset.data[currProject].livePreview}>
+              <img
+                src={imageLinks[currProject]}
+                alt="Current Project"
+                className="project-image"
+              />
+            </a>
+            <p className="project-name">{Dataset.data[currProject].title}</p>
+            <a href={Dataset.data[currProject].github} className="project-link">
+              <img src={GithubWhite} alt="Link to Project Code on Github" />
+            </a>
+            <a
+              href={Dataset.data[currProject].livePreview}
+              className="project-link"
+            >
+              <img src={OpenWhite} alt="Link To Project Webpage" />
+            </a>
+          </div>
+        </Swipeable>
         <div
           className="nextProject project-card"
           toprev={toPrev}
           tonext={toNext}
         >
-          <a href={Dataset.data[nextProject].livePreview}>
+          <a href="#">
             <img
               src={imageLinks[nextProject]}
               alt="Next Project"
@@ -168,7 +182,7 @@ function ProjectCarousel() {
           toprev={toPrev}
           tonext={toNext}
         >
-          <a href={Dataset.data[nextButOneProject].livePreview}>
+          <a href="#">
             <img
               src={imageLinks[nextButOneProject]}
               alt="Next But One Project"
@@ -187,10 +201,10 @@ function ProjectCarousel() {
         </div>
 
         <button onClick={handlePrevClick} className="prevButton">
-          PREV
+          <img src={ArrowUp} alt="Arrow" className="turn-left-90" />
         </button>
         <button onClick={handleNextClick} className="nextButton">
-          NEXT
+          <img src={ArrowUp} alt="Arrow" className="turn-right-90" />
         </button>
       </div>
     );
