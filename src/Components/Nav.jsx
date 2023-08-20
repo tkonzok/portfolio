@@ -1,13 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import "../styles/style.css";
 import MenuIconWhite from "../assets/icons/menu_white.svg";
+import MenuIcon from "../assets/icons/menu.svg";
 
-function Nav({ currentPage }) {
-  function Menu({ currentPage }) {
-    const [menuCollapsed, setMenuCollapsed] = useState(true);
-
+function Nav({ currentPage, menuCollapsed, onClick }) {
+  function Menu({ currentPage, menuCollapsed, onClick }) {
     const handleClick = () => {
-      setMenuCollapsed(!menuCollapsed);
+      return onClick(!menuCollapsed);
     };
 
     const jumpToPage = (id) => {
@@ -39,12 +38,14 @@ function Nav({ currentPage }) {
 
     return (
       <div className="menu">
-        <button onClick={handleClick}>
+        <button
+          className={menuCollapsed ? "menu-btn collapsed" : "menu-btn extended"}
+          onClick={handleClick}
+        >
           <img
-            src={MenuIconWhite}
+            src={menuCollapsed ? MenuIconWhite : MenuIcon}
             alt="Menu icon"
             width="32px"
-            className={menuCollapsed ? "menu collapsed" : "menu extended"}
           />
         </button>
         <div
@@ -59,7 +60,11 @@ function Nav({ currentPage }) {
   return (
     <nav>
       <h3>Tobias Konzok</h3>
-      <Menu currentPage={currentPage} />
+      <Menu
+        currentPage={currentPage}
+        menuCollapsed={menuCollapsed}
+        onClick={onClick}
+      />
     </nav>
   );
 }

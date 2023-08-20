@@ -169,14 +169,12 @@ nav {
   width: min(1200px, 100%);
   height: var(--navbar-height);
   margin: 0 calc(50% - min(720px, 50%));
-  padding: 0 min(10vw, 144px);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #00000000;
+  background-color: #00000050;
   color: #fff;
   z-index: 900;
-  gap: 1rem;
   opacity: 0;
   animation-name: nav-shown;
   animation-duration: 1s;
@@ -190,7 +188,9 @@ nav {
     opacity: 1;
   }
 }
+
 nav h3 {
+  margin-left: min(10vw, 144px);
   margin-right: auto;
   font-size: 1em;
   position: absolute;
@@ -202,6 +202,57 @@ nav h3 {
     position: initial;
     opacity: 1;
   }
+}
+
+.menu {
+  position: relative;
+  color: #fff;
+}
+
+.menu-btn {
+  background-color: #00000000;
+  border: 0;
+  padding-right: 16px;
+  position: relative;
+  z-index: 902;
+  cursor: pointer;
+}
+
+.menu-links {
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: calc(32px + var(--navbar-height)) 16px 16px;
+  text-align: end;
+  width: min(30vw, 200px);
+  top: 0;
+  right: max(-30vw, -200px);
+  background-color: #ccccccee;
+  color: #000;
+  transition: transform 1s ease-in-out;
+  z-index: 901;
+  box-shadow: 2px 2px 10px 2px #000;
+}
+
+.menu-links.shown {
+  transform: translateX(max(-200px, -30vw));
+}
+
+.menu-links > a {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  transform-origin: 100% 50%;
+}
+
+.menu-links > a:hover {
+  transform: scale(1.1);
+}
+
+.menu-links.current-page {
+  color: #303030;
+  text-decoration: underline;
 }
 
 /* HERO */

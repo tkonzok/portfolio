@@ -22,6 +22,11 @@ function App() {
   });
 
   const [currentPage, setCurrentPage] = useState(0);
+  const [menuCollapsed, setMenuCollapsed] = useState(true);
+
+  function handleMenuClick(newMenuState) {
+    setMenuCollapsed(newMenuState);
+  }
 
   useEffect(() => {
     if (inViewHero) {
@@ -55,7 +60,11 @@ function App() {
 
   return (
     <>
-      <Nav currentPage={currentPage} />
+      <Nav
+        currentPage={currentPage}
+        menuCollapsed={menuCollapsed}
+        onClick={handleMenuClick}
+      />
       <section className="hero-container" ref={refHero}>
         <Hero />
       </section>
