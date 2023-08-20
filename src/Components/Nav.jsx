@@ -2,8 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import "../styles/style.css";
 import MenuIconWhite from "../assets/icons/menu_white.svg";
 
-function Nav(currentPage) {
-  function Menu(currentPage) {
+function Nav({ currentPage }) {
+  function Menu({ currentPage }) {
     const [menuCollapsed, setMenuCollapsed] = useState(true);
 
     const handleClick = () => {
@@ -26,8 +26,12 @@ function Nav(currentPage) {
     const arrayLinks = links.map((link, index) => (
       <a
         key={index}
-        onClick={jumpToPage(index)}
-        className={currentPage === { index } && "current-page"}
+        onClick={() => {
+          {
+            jumpToPage(index);
+          }
+        }}
+        className={currentPage === index ? "current-page" : ""}
       >
         {link}
       </a>
@@ -55,7 +59,7 @@ function Nav(currentPage) {
   return (
     <nav>
       <h3>Tobias Konzok</h3>
-      {false && <Menu currentPage={currentPage} />}
+      <Menu currentPage={currentPage} />
     </nav>
   );
 }

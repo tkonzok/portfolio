@@ -27,13 +27,6 @@ function Contact() {
           <p className="span">
             Open for new job opportunities. Feel free to get in touch.
           </p>
-          <p className="span">
-            23847 Meddewade
-            <br />
-            Schleswig-Holstein
-            <br />
-            GERMANY
-          </p>
           <a href="mailto:konzok.tobias@gmail.com">
             <img
               src={EmailWhite}

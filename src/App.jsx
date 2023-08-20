@@ -10,15 +10,15 @@ import Contact from "./Components/Contact.jsx";
 import ArrowUp from "./assets/icons/arrow-up-bold-circle.svg";
 
 function App() {
-  const { refHero, inViewHero } = useInView({ threshold: 1, delay: 1000 });
-  const { refAbout, inViewAbout } = useInView({ threshold: 0.5, delay: 1000 });
-  const { refProjects, inViewProjects } = useInView({
+  const [refHero, inViewHero] = useInView({ threshold: 1, delay: 100 });
+  const [refAbout, inViewAbout] = useInView({ threshold: 0.5, delay: 100 });
+  const [refProjects, inViewProjects] = useInView({
     threshold: 0.5,
-    delay: 1000,
+    delay: 100,
   });
-  const { refContact, inViewContact } = useInView({
+  const [refContact, inViewContact] = useInView({
     threshold: 0.5,
-    delay: 1000,
+    delay: 100,
   });
 
   const [currentPage, setCurrentPage] = useState(0);
@@ -55,7 +55,7 @@ function App() {
 
   return (
     <>
-      {!inViewHero && <Nav currentPage={currentPage} />}
+      <Nav currentPage={currentPage} />
       <section className="hero-container" ref={refHero}>
         <Hero />
       </section>
