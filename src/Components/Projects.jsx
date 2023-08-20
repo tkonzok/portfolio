@@ -14,7 +14,7 @@ function ProjectCarousel() {
   const animationDuration = 500; // milliseconds
   const numberProjectsToShow = 5; // number of projects to fetch from data to prevent showing the older ones
   const [penultimateProject, setPenultimateProject] = useState(
-    numberProjectsToShow - 1
+    numberProjectsToShow - 2
   );
   const [prevProject, setPrevProject] = useState(numberProjectsToShow - 1);
   const [currProject, setCurrProject] = useState(0);
@@ -90,7 +90,7 @@ function ProjectCarousel() {
 
   function ProjectCards() {
     return (
-      <div className="project-carousel">
+      <div {...handlers} className="project-carousel">
         <div
           className="penultimateProject project-card"
           toprev={toPrev}
@@ -134,7 +134,6 @@ function ProjectCarousel() {
           </a>
         </div>
         <div
-          {...handlers}
           className="currentProject project-card"
           toprev={toPrev}
           tonext={toNext}

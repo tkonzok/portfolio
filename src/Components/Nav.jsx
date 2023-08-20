@@ -58,7 +58,7 @@ function Nav({ currentPage, menuCollapsed, onClick }) {
   }
 
   return (
-    <nav>
+    <nav className={currentPage === 0 ? "hero-section" : ""}>
       <h3>Tobias Konzok</h3>
       <Menu
         currentPage={currentPage}

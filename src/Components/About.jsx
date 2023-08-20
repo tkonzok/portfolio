@@ -19,7 +19,7 @@ function Links() {
     <div className="links" ref={ref}>
       <a
         href="https://github.com/tkonzok"
-        className={inView ? "link slide-in from-left delay1" : "link"}
+        className={inView ? "link slide-in from-left delay2" : "link"}
       >
         <img src={GithubWhite} alt="GitHub icon" className="github" />
       </a>
@@ -31,7 +31,7 @@ function Links() {
       </a>
       <a
         href="https://xing.com/profile/tobias_konzok"
-        className={inView ? "link slide-in from-left delay2" : "link"}
+        className={inView ? "link slide-in from-left delay1" : "link"}
       >
         <img src={XingWhite} alt="Xing icon" className="xing" />
       </a>
@@ -41,7 +41,7 @@ function Links() {
 
 function About() {
   return (
-    <>
+    <div>
       <div className="about-me">
         <h2>About Me</h2>
         <p>
@@ -62,7 +62,7 @@ function About() {
         </p>
         <Links />
       </div>
-    </>
+    </div>
   );
 }
 
