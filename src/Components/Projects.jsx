@@ -19,8 +19,8 @@ import ReactLogo from "../assets/icons/react.svg";
 import ViteLogo from "../assets/icons/vite.svg";
 import VitestLogo from "../assets/icons/vitest.svg";
 
-function ProjectCarousel() {
-  const animationDuration = 500; // milliseconds
+function Projects() {
+  const animationDuration = 200; // milliseconds
   const numberProjectsToShow = 9; // number of projects to fetch from data to prevent showing the older ones
   const [penultimateProject, setPenultimateProject] =
     useState(numberProjectsToShow);
@@ -28,8 +28,22 @@ function ProjectCarousel() {
   const [currProject, setCurrProject] = useState(2);
   const [nextProject, setNextProject] = useState(3);
   const [nextButOneProject, setNextButOneProject] = useState(4);
+
   const [toPrev, setToPrev] = useState(0);
   const [toNext, setToNext] = useState(0);
+
+  const [ref1, inView1] = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
+  const [ref2, inView2] = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
+  const [ref3, inView3] = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
 
   const imageLinks = [];
   for (let i = 0; i < numberProjectsToShow + 2; i++) {
@@ -39,20 +53,19 @@ function ProjectCarousel() {
   function handlePrevClick() {
     setToPrev(1);
     setTimeout(() => {
+      setCurrProject(prevProject);
+      setPrevProject(penultimateProject);
+      setNextProject(currProject);
+    }, animationDuration);
+    setTimeout(() => {
       if (penultimateProject === 2) {
         setPenultimateProject(numberProjectsToShow + 1);
-        setPrevProject(penultimateProject);
-        setCurrProject(prevProject);
-        setNextProject(currProject);
         setNextButOneProject(nextProject);
       } else {
         setPenultimateProject(penultimateProject - 1);
-        setPrevProject(penultimateProject);
-        setCurrProject(prevProject);
-        setNextProject(currProject);
         setNextButOneProject(nextProject);
       }
-    }, animationDuration);
+    }, 1000);
   }
 
   useEffect(() => {
@@ -63,17 +76,16 @@ function ProjectCarousel() {
   function handleNextClick() {
     setToNext(1);
     setTimeout(() => {
+      setCurrProject(nextProject);
+      setPrevProject(currProject);
+      setNextProject(nextButOneProject);
+    }, animationDuration);
+    setTimeout(() => {
       if (nextButOneProject === numberProjectsToShow + 1) {
         setPenultimateProject(prevProject);
-        setPrevProject(currProject);
-        setCurrProject(nextProject);
-        setNextProject(nextButOneProject);
         setNextButOneProject(2);
       } else {
         setPenultimateProject(prevProject);
-        setPrevProject(currProject);
-        setCurrProject(nextProject);
-        setNextProject(nextButOneProject);
         setNextButOneProject(nextButOneProject + 1);
       }
     }, animationDuration);
@@ -98,7 +110,7 @@ function ProjectCarousel() {
     result = result.split("'>").join("/split");
     result = result.split("</a>").join("/split");
     result = result.split("/split");
-    if (result.length === 1) return { result };
+    if (result.length !== 4) return result[0];
     return (
       <>
         {result[0]}
@@ -133,20 +145,75 @@ function ProjectCarousel() {
 
   return (
     <div>
-      <div className="project-carousel-container">
+      <div
+        ref={ref1}
+        className={
+          inView1
+            ? "primaryProject project-card from-bottom slide-in"
+            : "primaryProject project-card from-bottom"
+        }
+      >
+        <img
+          src={imageLinks[0]}
+          alt="Primary Project"
+          className="project-image"
+        />
+        <h3 className="project-name">{Dataset.data[0].title}</h3>
+        <a href={Dataset.data[0].github} className="project-link">
+          <img src={GithubWhite} alt="Link to Project Code on Github" />
+        </a>
+        <a href={Dataset.data[0].livePreview} className="project-link">
+          <img src={OpenWhite} alt="Link To Project Webpage" />
+        </a>
+        <p className="project-description">
+          <Description project={Dataset.data[0]} />
+        </p>
+        <Technologies project={Dataset.data[0]} />
+      </div>
+      <div
+        ref={ref2}
+        className={
+          inView2
+            ? "secondaryProject project-card from-bottom slide-in"
+            : "secondaryProject project-card from-bottom"
+        }
+      >
+        <img
+          src={imageLinks[1]}
+          alt="Secondary Project"
+          className="project-image"
+        />
+        <h3 className="project-name">{Dataset.data[1].title}</h3>
+        <a href={Dataset.data[1].github} className="project-link">
+          <img src={GithubWhite} alt="Link to Project Code on Github" />
+        </a>
+        <a href={Dataset.data[1].livePreview} className="project-link">
+          <img src={OpenWhite} alt="Link To Project Webpage" />
+        </a>
+        <p className="project-description">
+          <Description project={Dataset.data[1]} />
+        </p>
+        <Technologies project={Dataset.data[1]} />
+      </div>
+      <div
+        ref={ref3}
+        className={
+          inView3
+            ? "project-carousel-container from-bottom slide-in"
+            : "project-carousel-container from-bottom"
+        }
+      >
         <div {...handlers} className="project-carousel">
           <div
             className="penultimateProject project-card"
             toprev={toPrev}
             tonext={toNext}
           >
-            <a href="#">
-              <img
-                src={imageLinks[penultimateProject]}
-                alt="Penultimate Project"
-                className="project-image"
-              />
-            </a>
+            <img
+              src={imageLinks[penultimateProject]}
+              alt="Penultimate Project"
+              className="project-image"
+            />
             <h3 className="project-name">
               {Dataset.data[penultimateProject].title}
             </h3>
@@ -166,13 +233,11 @@ function ProjectCarousel() {
             toprev={toPrev}
             tonext={toNext}
           >
-            <a href="#">
-              <img
-                src={imageLinks[prevProject]}
-                alt="Previous Project"
-                className="project-image"
-              />
-            </a>
+            <img
+              src={imageLinks[prevProject]}
+              alt="Previous Project"
+              className="project-image"
+            />
             <h3 className="project-name">{Dataset.data[prevProject].title}</h3>
             <a href="#" className="project-link">
               <img src={GithubWhite} />
@@ -190,13 +255,11 @@ function ProjectCarousel() {
             toprev={toPrev}
             tonext={toNext}
           >
-            <a href={Dataset.data[currProject].livePreview}>
-              <img
-                src={imageLinks[currProject]}
-                alt="Current Project"
-                className="project-image"
-              />
-            </a>
+            <img
+              src={imageLinks[currProject]}
+              alt="Current Project"
+              className="project-image"
+            />
             <h3 className="project-name">{Dataset.data[currProject].title}</h3>
             <a href={Dataset.data[currProject].github} className="project-link">
               <img src={GithubWhite} alt="Link to Project Code on Github" />
@@ -217,13 +280,11 @@ function ProjectCarousel() {
             toprev={toPrev}
             tonext={toNext}
           >
-            <a href="#">
-              <img
-                src={imageLinks[nextProject]}
-                alt="Next Project"
-                className="project-image"
-              />
-            </a>
+            <img
+              src={imageLinks[nextProject]}
+              alt="Next Project"
+              className="project-image"
+            />
             <h3 className="project-name">{Dataset.data[nextProject].title}</h3>
             <a href="#" className="project-link">
               <img src={GithubWhite} alt="Link to Project Code on Github" />
@@ -241,13 +302,11 @@ function ProjectCarousel() {
             toprev={toPrev}
             tonext={toNext}
           >
-            <a href="#">
-              <img
-                src={imageLinks[nextButOneProject]}
-                alt="Next But One Project"
-                className="project-image"
-              />
-            </a>
+            <img
+              src={imageLinks[nextButOneProject]}
+              alt="Next But One Project"
+              className="project-image"
+            />
             <h3 className="project-name">
               {Dataset.data[nextButOneProject].title}
             </h3>
@@ -272,14 +331,6 @@ function ProjectCarousel() {
         </div>
       </div>
     </div>
-  );
-}
-
-function Projects() {
-  return (
-    <>
-      <ProjectCarousel />
-    </>
   );
 }
 

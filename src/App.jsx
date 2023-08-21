@@ -10,14 +10,18 @@ import Contact from "./Components/Contact.jsx";
 import ArrowUp from "./assets/icons/arrow-up-bold-circle.svg";
 
 function App() {
-  const [refHero, inViewHero] = useInView({ threshold: 1, delay: 100 });
-  const [refAbout, inViewAbout] = useInView({ threshold: 0.5, delay: 100 });
+  const [refHero, inViewHero] = useInView({
+    threshold: 0,
+    delay: 100,
+    initialInView: true,
+  });
+  const [refAbout, inViewAbout] = useInView({ threshold: 0.25, delay: 100 });
   const [refProjects, inViewProjects] = useInView({
-    threshold: 0.5,
+    threshold: 0.25,
     delay: 100,
   });
   const [refContact, inViewContact] = useInView({
-    threshold: 0.5,
+    threshold: 0.25,
     delay: 100,
   });
 
