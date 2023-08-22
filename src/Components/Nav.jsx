@@ -30,7 +30,9 @@ function Nav({ currentPage, menuCollapsed, onClick }) {
             jumpToPage(index);
           }
         }}
-        className={currentPage === index ? "current-page" : ""}
+        className={
+          currentPage === index ? "is-current-page" : "not-current-page"
+        }
       >
         {link}
       </a>
@@ -58,7 +60,7 @@ function Nav({ currentPage, menuCollapsed, onClick }) {
   }
 
   return (
-    <nav className={currentPage === 0 ? "hero-section" : ""}>
+    <nav className={currentPage === 0 ? "bg-transparent" : "bg-red"}>
       <h3>Tobias Konzok</h3>
       <Menu
         currentPage={currentPage}

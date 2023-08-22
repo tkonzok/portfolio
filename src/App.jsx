@@ -11,9 +11,8 @@ import ArrowUp from "./assets/icons/arrow-up-bold-circle.svg";
 
 function App() {
   const [refHero, inViewHero] = useInView({
-    threshold: 0,
+    threshold: 0.25,
     delay: 100,
-    initialInView: true,
   });
   const [refAbout, inViewAbout] = useInView({ threshold: 0.25, delay: 100 });
   const [refProjects, inViewProjects] = useInView({
@@ -54,7 +53,7 @@ function App() {
 
     return (
       <button
-        className={inViewHero ? "arrow-up not-shown" : "arrow-up shown"}
+        className={inViewHero ? "arrow-up" : "arrow-up shown"}
         onClick={handleClick}
       >
         <img src={ArrowUp} alt="Arrow" />
@@ -81,7 +80,7 @@ function App() {
       <section className="contact-container" ref={refContact}>
         <Contact />
       </section>
-      {!inViewHero && <Arrow />}
+      <Arrow />
     </>
   );
 }
