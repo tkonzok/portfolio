@@ -23,6 +23,15 @@ function ProfileImage() {
   );
 }
 
+function Name() {
+  return (
+    <div className="names">
+      <p className="name fade-in delay1">TOBIAS</p>
+      <p className="name fade-in delay2">KONZOK</p>
+    </div>
+  );
+}
+
 function Infos() {
   const { ref, inView, entry } = useInView({
     threshold: 0,
@@ -31,9 +40,9 @@ function Infos() {
 
   return (
     <div className="infos" ref={ref}>
-      <p className={inView ? "info fade-in delay2" : "info"}>Innovative</p>
-      <p className={inView ? "info fade-in delay4" : "info"}>Motivated</p>
-      <p className={inView ? "info fade-in delay6" : "info"}>Reliable</p>
+      <p className={inView ? "info fade-in delay4" : "info"}>Developer</p>
+      <p className={inView ? "info fade-in delay5" : "info"}>Engineer</p>
+      <p className={inView ? "info fade-in delay6" : "info"}>Musician</p>
     </div>
   );
 }
@@ -44,6 +53,9 @@ function Hero() {
       <div className="hero">
         <div className="profile-img-container">
           <ProfileImage />
+        </div>
+        <div className="name-container">
+          <Name />
         </div>
         <div className="info-container">
           <Infos />
