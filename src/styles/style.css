@@ -107,7 +107,7 @@ a > img:hover {
   width: 2.5rem;
   height: 2.5rem;
   position: fixed;
-  z-index: 200;
+  z-index: 905;
   bottom: 5%;
   left: calc(90% - 20px);
   cursor: pointer;
@@ -159,6 +159,10 @@ a > img:hover {
 
 .delay6 {
   animation-delay: 6s;
+}
+
+.delay7 {
+  animation-delay: 7s;
 }
 
 .fade-in {
@@ -387,6 +391,12 @@ nav h3 {
   opacity: 0;
 }
 
+.info.logos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 /* ABOUT */
 .about-container {
   width: 100%;
@@ -482,7 +492,6 @@ nav h3 {
   padding: 24px;
   max-width: min(960px, 100vh);
   overflow: hidden;
-  margin: auto;
   border-radius: clamp(8px, calc(var(--carousel-size) * 0.02), 16px);
   box-shadow: 2px 2px 10px 2px #000;
   background-color: var(--colorpalette-black);

@@ -6,6 +6,9 @@ import ProfileImg160 from "../assets/images/profile-pic-01_160.jpg";
 import ProfileImg320 from "../assets/images/profile-pic-01_320.jpg";
 import ProfileImg640 from "../assets/images/profile-pic-01_640.jpg";
 import ProfileImg960 from "../assets/images/profile-pic-01_960.jpg";
+import JsLogo from "../assets/icons/javascript.svg";
+import ReactLogo from "../assets/icons/react.svg";
+import PythonLogo from "../assets/icons/python.svg";
 
 function ProfileImage() {
   const { ref, inView, entry } = useInView({
@@ -43,6 +46,11 @@ function Infos() {
       <p className={inView ? "info fade-in delay4" : "info"}>Developer</p>
       <p className={inView ? "info fade-in delay5" : "info"}>Engineer</p>
       <p className={inView ? "info fade-in delay6" : "info"}>Musician</p>
+      <div className={inView ? "info logos fade-in delay7" : "info logos"}>
+        <img src={ReactLogo} alt="React Logo"></img>
+        <img src={JsLogo} alt="JavaScript Logo"></img>
+        <img src={PythonLogo} alt="Python Logo"></img>
+      </div>
     </div>
   );
 }
