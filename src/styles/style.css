@@ -51,41 +51,6 @@ body {
   scroll-behavior: smooth;
 }
 
-#bg-overlay {
-  opacity: 0;
-}
-
-/*
-#bg-overlay {
-  position: fixed;
-  height: 150lvh;
-  width: 100%;
-  z-index: -1;
-  background: linear-gradient(
-    300deg,
-    #00000080,
-    var(--blue-very-dark-transparent),
-    var(--blue-dark-transparent)
-  );
-  background-size: 180% 180%;
-  animation-name: gradient-animation;
-  animation-duration: 30s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-*/
 a {
   text-decoration: none;
   cursor: pointer;
@@ -130,7 +95,7 @@ a > img:hover {
 }
 
 .from-bottom {
-  transform: translateY(10vh);
+  transform: translateY(10%);
 }
 
 .delay1 {
@@ -247,22 +212,23 @@ nav.bg-red {
 nav h3 {
   margin-left: min(10vw, 144px);
   margin-right: auto;
-  font-size: 1em;
-  position: absolute;
+  font-size: 28px;
+  position: relative;
+  transition: opacity 1s;
   opacity: 0;
 }
 
-@media (min-width: 512px) {
-  nav.bg-red h3 {
-    position: initial;
-    opacity: 1;
-  }
+nav.bg-red h3 {
+  opacity: 1;
 }
 
 .menu {
   position: relative;
   color: #fff;
   margin: 0 0 0 auto;
+  transition:
+    transform 1s ease-in-out,
+    -webkit-transform 1s ease-in-out;
 }
 
 .menu-btn {
@@ -282,13 +248,13 @@ nav h3 {
   gap: 48px;
   padding: calc(32px + var(--navbar-height)) 16px 16px;
   text-align: end;
-  width: min(30vw, 200px);
+  width: clamp(125px, 30vw, 200px);
   top: 0;
   right: max(-30vw, -200px);
   margin-right: max(0, calc(50% - 600px));
+  font-size: 28px;
   background-color: var(--colorpalette-red);
-  transition: transform 1s ease-in-out;
-  z-index: 901;
+  box-shadow: 2px 2px 10px 2px #000;
 }
 
 .menu-links.shown {
@@ -473,15 +439,24 @@ nav h3 {
   height: 100%;
   width: min(1200px, 100%);
   margin: 0 auto;
-  padding: 240px 0;
+  padding: 150px 0;
   display: flex;
   flex-direction: column;
   text-align: center;
-  gap: 240px;
+  gap: 150px;
   justify-content: center;
   align-items: center;
   scroll-snap-align: center;
   background-color: var(--colorpalette-dark-blue);
+}
+
+.primaryProject,
+.secondaryProject {
+  opacity: 0;
+  transform: translateY(100px);
+  transition:
+    transform 1s ease-out,
+    opacity 1.5s ease-in;
 }
 
 .project-carousel-container {
@@ -496,6 +471,17 @@ nav h3 {
   box-shadow: 2px 2px 10px 2px #000;
   background-color: var(--colorpalette-black);
   opacity: 0;
+  transform: translateY(100px);
+  transition:
+    transform 1s ease-out,
+    opacity 1.5s ease-in;
+}
+
+.primaryProject.inView,
+.secondaryProject.inView,
+.project-carousel-container.inView {
+  transform: translateY(-100px);
+  opacity: 1;
 }
 
 .project-carousel {
@@ -509,18 +495,26 @@ nav h3 {
   width: var(--carousel-size);
   height: var(--carousel-size);
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows:
+    calc(var(--carousel-size) * 0.75) calc(var(--carousel-size) * 0.18)
+    calc(var(--carousel-size) * 0.07);
+  border-radius: clamp(8px, calc(var(--carousel-size) * 0.02), 16px);
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 2px 2px 10px 2px #000;
+}
+
+.project-card > .content {
+  width: 100%;
+  display: grid;
   grid-template-columns: 1fr repeat(
       2,
       min(calc(var(--carousel-size) * 0.08), 64px)
     );
-  grid-template-rows:
-    calc(var(--carousel-size) * 0.75) calc(var(--carousel-size) * 0.08)
-    calc(var(--carousel-size) * 0.1) calc(var(--carousel-size) * 0.07);
-  border-radius: clamp(8px, calc(var(--carousel-size) * 0.02), 16px);
-  overflow: hidden;
-  margin: 0 auto;
+  grid-template-rows: 4fr 5fr;
   background-color: var(--colorpalette-red);
-  box-shadow: 2px 2px 10px 2px #000;
+  overflow: hidden;
 }
 
 .project-card img:hover {
@@ -539,6 +533,7 @@ nav h3 {
 .project-name {
   margin: auto;
   padding: auto;
+  font-size: calc(var(--carousel-size) / 20);
 }
 
 .project-link {
@@ -556,6 +551,7 @@ nav h3 {
   grid-column: span 3;
   font-size: calc(var(--carousel-size) / 40);
   margin: 0 auto auto;
+  padding: 0 2%;
 }
 
 .project-description > a {
@@ -856,10 +852,6 @@ nav h3 {
 
   /* PROJECTS */
 
-  .project-card {
-    font-size: min(3.5vw, 1.75vh, 1.5rem);
-  }
-
   /* CONTACT */
 
   .contact-container > div {
@@ -890,6 +882,7 @@ nav h3 {
     width: 100%;
     right: 0;
     margin-right: 0;
+    box-shadow: none;
     transition:
       transform 1s ease-in-out,
       color 1s;
@@ -933,10 +926,6 @@ nav h3 {
   }
 
   /* PROJECTS */
-
-  .project-card {
-    font-size: min(4vw, 2vh, 2rem);
-  }
 
   /* CONTACT */
 

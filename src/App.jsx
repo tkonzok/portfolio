@@ -11,7 +11,7 @@ import ArrowUp from "./assets/icons/arrow-up-bold-circle.svg";
 
 function App() {
   const [refHero, inViewHero] = useInView({
-    threshold: 0.25,
+    threshold: 0,
     delay: 100,
   });
   const [refAbout, inViewAbout] = useInView({ threshold: 0.25, delay: 100 });

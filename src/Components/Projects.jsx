@@ -149,8 +149,8 @@ function Projects() {
         ref={ref1}
         className={
           inView1
-            ? "primaryProject project-card from-bottom slide-in"
-            : "primaryProject project-card from-bottom"
+            ? "primaryProject project-card inView"
+            : "primaryProject project-card"
         }
       >
         <img
@@ -158,24 +158,26 @@ function Projects() {
           alt="Primary Project"
           className="project-image"
         />
-        <h3 className="project-name">{Dataset.data[0].title}</h3>
-        <a href={Dataset.data[0].github} className="project-link">
-          <img src={GithubWhite} alt="Link to Project Code on Github" />
-        </a>
-        <a href={Dataset.data[0].livePreview} className="project-link">
-          <img src={OpenWhite} alt="Link To Project Webpage" />
-        </a>
-        <p className="project-description">
-          <Description project={Dataset.data[0]} />
-        </p>
+        <div className="content">
+          <h3 className="project-name">{Dataset.data[0].title}</h3>
+          <a href={Dataset.data[0].github} className="project-link">
+            <img src={GithubWhite} alt="Link to Project Code on Github" />
+          </a>
+          <a href={Dataset.data[0].livePreview} className="project-link">
+            <img src={OpenWhite} alt="Link To Project Webpage" />
+          </a>
+          <p className="project-description">
+            <Description project={Dataset.data[0]} />
+          </p>
+        </div>
         <Technologies project={Dataset.data[0]} />
       </div>
       <div
         ref={ref2}
         className={
           inView2
-            ? "secondaryProject project-card from-bottom slide-in"
-            : "secondaryProject project-card from-bottom"
+            ? "secondaryProject project-card inView"
+            : "secondaryProject project-card"
         }
       >
         <img
@@ -183,24 +185,26 @@ function Projects() {
           alt="Secondary Project"
           className="project-image"
         />
-        <h3 className="project-name">{Dataset.data[1].title}</h3>
-        <a href={Dataset.data[1].github} className="project-link">
-          <img src={GithubWhite} alt="Link to Project Code on Github" />
-        </a>
-        <a href={Dataset.data[1].livePreview} className="project-link">
-          <img src={OpenWhite} alt="Link To Project Webpage" />
-        </a>
-        <p className="project-description">
-          <Description project={Dataset.data[1]} />
-        </p>
+        <div className="content">
+          <h3 className="project-name">{Dataset.data[1].title}</h3>
+          <a href={Dataset.data[1].github} className="project-link">
+            <img src={GithubWhite} alt="Link to Project Code on Github" />
+          </a>
+          <a href={Dataset.data[1].livePreview} className="project-link">
+            <img src={OpenWhite} alt="Link To Project Webpage" />
+          </a>
+          <p className="project-description">
+            <Description project={Dataset.data[1]} />
+          </p>
+        </div>
         <Technologies project={Dataset.data[1]} />
       </div>
       <div
         ref={ref3}
         className={
           inView3
-            ? "project-carousel-container from-bottom slide-in"
-            : "project-carousel-container from-bottom"
+            ? "project-carousel-container inView"
+            : "project-carousel-container"
         }
       >
         <div {...handlers} className="project-carousel">
@@ -214,18 +218,20 @@ function Projects() {
               alt="Penultimate Project"
               className="project-image"
             />
-            <h3 className="project-name">
-              {Dataset.data[penultimateProject].title}
-            </h3>
-            <a href="#" className="project-link">
-              <img src={GithubWhite} alt="Link to Project Code on Github" />
-            </a>
-            <a href="#" className="project-link">
-              <img src={OpenWhite} alt="Link To Project Webpage" />
-            </a>
-            <p className="project-description">
-              <Description project={Dataset.data[penultimateProject]} />
-            </p>
+            <div className="content">
+              <h3 className="project-name">
+                {Dataset.data[penultimateProject].title}
+              </h3>
+              <a href="#" className="project-link">
+                <img src={GithubWhite} alt="Link to Project Code on Github" />
+              </a>
+              <a href="#" className="project-link">
+                <img src={OpenWhite} alt="Link To Project Webpage" />
+              </a>
+              <p className="project-description">
+                <Description project={Dataset.data[penultimateProject]} />
+              </p>
+            </div>
             <Technologies project={Dataset.data[penultimateProject]} />
           </div>
           <div
@@ -238,16 +244,20 @@ function Projects() {
               alt="Previous Project"
               className="project-image"
             />
-            <h3 className="project-name">{Dataset.data[prevProject].title}</h3>
-            <a href="#" className="project-link">
-              <img src={GithubWhite} />
-            </a>
-            <a href="#" className="project-link">
-              <img src={OpenWhite} alt="Link To Project Webpage" />
-            </a>
-            <p className="project-description">
-              <Description project={Dataset.data[prevProject]} />
-            </p>
+            <div className="content">
+              <h3 className="project-name">
+                {Dataset.data[prevProject].title}
+              </h3>
+              <a href="#" className="project-link">
+                <img src={GithubWhite} />
+              </a>
+              <a href="#" className="project-link">
+                <img src={OpenWhite} alt="Link To Project Webpage" />
+              </a>
+              <p className="project-description">
+                <Description project={Dataset.data[prevProject]} />
+              </p>
+            </div>
             <Technologies project={Dataset.data[prevProject]} />
           </div>
           <div
@@ -260,19 +270,26 @@ function Projects() {
               alt="Current Project"
               className="project-image"
             />
-            <h3 className="project-name">{Dataset.data[currProject].title}</h3>
-            <a href={Dataset.data[currProject].github} className="project-link">
-              <img src={GithubWhite} alt="Link to Project Code on Github" />
-            </a>
-            <a
-              href={Dataset.data[currProject].livePreview}
-              className="project-link"
-            >
-              <img src={OpenWhite} alt="Link To Project Webpage" />
-            </a>
-            <p className="project-description">
-              <Description project={Dataset.data[currProject]} />
-            </p>
+            <div className="content">
+              <h3 className="project-name">
+                {Dataset.data[currProject].title}
+              </h3>
+              <a
+                href={Dataset.data[currProject].github}
+                className="project-link"
+              >
+                <img src={GithubWhite} alt="Link to Project Code on Github" />
+              </a>
+              <a
+                href={Dataset.data[currProject].livePreview}
+                className="project-link"
+              >
+                <img src={OpenWhite} alt="Link To Project Webpage" />
+              </a>
+              <p className="project-description">
+                <Description project={Dataset.data[currProject]} />
+              </p>
+            </div>
             <Technologies project={Dataset.data[currProject]} />
           </div>
           <div
@@ -285,16 +302,20 @@ function Projects() {
               alt="Next Project"
               className="project-image"
             />
-            <h3 className="project-name">{Dataset.data[nextProject].title}</h3>
-            <a href="#" className="project-link">
-              <img src={GithubWhite} alt="Link to Project Code on Github" />
-            </a>
-            <a href="#" className="project-link">
-              <img src={OpenWhite} alt="Link To Project Webpage" />
-            </a>
-            <p className="project-description">
-              <Description project={Dataset.data[nextProject]} />
-            </p>
+            <div className="content">
+              <h3 className="project-name">
+                {Dataset.data[nextProject].title}
+              </h3>
+              <a href="#" className="project-link">
+                <img src={GithubWhite} alt="Link to Project Code on Github" />
+              </a>
+              <a href="#" className="project-link">
+                <img src={OpenWhite} alt="Link To Project Webpage" />
+              </a>
+              <p className="project-description">
+                <Description project={Dataset.data[nextProject]} />
+              </p>
+            </div>
             <Technologies project={Dataset.data[nextProject]} />
           </div>
           <div
@@ -307,18 +328,20 @@ function Projects() {
               alt="Next But One Project"
               className="project-image"
             />
-            <h3 className="project-name">
-              {Dataset.data[nextButOneProject].title}
-            </h3>
-            <a href="#" className="project-link">
-              <img src={GithubWhite} alt="Link to Project Code on Github" />
-            </a>
-            <a href="#" className="project-link">
-              <img src={OpenWhite} alt="Link To Project Webpage" />
-            </a>
-            <p className="project-description">
-              <Description project={Dataset.data[nextButOneProject]} />
-            </p>
+            <div className="content">
+              <h3 className="project-name">
+                {Dataset.data[nextButOneProject].title}
+              </h3>
+              <a href="#" className="project-link">
+                <img src={GithubWhite} alt="Link to Project Code on Github" />
+              </a>
+              <a href="#" className="project-link">
+                <img src={OpenWhite} alt="Link To Project Webpage" />
+              </a>
+              <p className="project-description">
+                <Description project={Dataset.data[nextButOneProject]} />
+              </p>
+            </div>
             <Technologies project={Dataset.data[nextButOneProject]} />
           </div>
 
