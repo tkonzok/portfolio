@@ -355,28 +355,78 @@ nav.bg-red h3 {
   margin: 0;
 }
 
-.info-container {
+.techstack-container {
   width: 100%;
   position: absolute;
-  top: 20vw;
-  left: min(420px, 35vw);
+  top: 40vh;
+  left: min(480px, 40vw);
 }
 
-.infos {
+.stack {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-}
-
-.info {
-  opacity: 0;
-}
-
-.info.logos {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.stack .logo {
+  opacity: 0;
+  width: min(10vh, 10vw, 64px);
+}
+
+.buzzwords-container {
+  width: 100%;
+  position: absolute;
+  top: min(40vw, 30vh);
+  right: min(420px, 35vw);
+}
+
+.buzzwords {
+  font-size: min(40px, 3vh, 7.5vw);
+}
+
+.buzzword {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.visible.buzzword {
+  transform: translateY(3vh);
+  opacity: 0;
+  animation-name: slide-in-buzzword;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-in-buzzword {
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.invisible.buzzword {
+  transform: translateY(0px);
+  opacity: 1;
+  animation-name: slide-out-buzzword;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-out-buzzword {
+  100% {
+    transform: translateY(-3vh);
+    opacity: 0;
+  }
 }
 
 /* ABOUT */

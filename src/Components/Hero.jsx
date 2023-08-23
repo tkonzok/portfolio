@@ -35,21 +35,62 @@ function Name() {
   );
 }
 
-function Infos() {
+function TechStack() {
+  return (
+    <div className="stack">
+      <div className="logo fade-in delay2">
+        <img src={ReactLogo} alt="React Logo"></img>
+      </div>
+      <div className="logo fade-in delay3">
+        <img src={JsLogo} alt="JavaScript Logo"></img>
+      </div>
+      <div className="logo fade-in delay4">
+        <img src={PythonLogo} alt="Python Logo"></img>
+      </div>
+    </div>
+  );
+}
+
+function Buzzwords() {
   const { ref, inView, entry } = useInView({
     threshold: 0,
     triggerOnce: true,
   });
 
+  const [buzzword, setBuzzword] = useState(2);
+
+  async function startNewInterval(msec) {
+    await new Promise((resolve) => setTimeout(resolve, msec));
+    if (buzzword < 2) {
+      setBuzzword(buzzword + 1);
+    } else {
+      setBuzzword(0);
+    }
+  }
+
+  useEffect(() => {
+    startNewInterval(4000);
+  }, [buzzword, inView]);
+
   return (
-    <div className="infos" ref={ref}>
-      <p className={inView ? "info fade-in delay4" : "info"}>Developer</p>
-      <p className={inView ? "info fade-in delay5" : "info"}>Engineer</p>
-      <p className={inView ? "info fade-in delay6" : "info"}>Musician</p>
-      <div className={inView ? "info logos fade-in delay7" : "info logos"}>
-        <img src={ReactLogo} alt="React Logo"></img>
-        <img src={JsLogo} alt="JavaScript Logo"></img>
-        <img src={PythonLogo} alt="Python Logo"></img>
+    <div
+      ref={ref}
+      className={inView ? "buzzwords slide-in from-bottom delay1" : "buzzwords"}
+    >
+      <div
+        className={buzzword === 0 ? "buzzword visible" : "buzzword invisible"}
+      >
+        <p>Developer</p>
+      </div>
+      <div
+        className={buzzword === 1 ? "buzzword visible" : "buzzword invisible"}
+      >
+        <p>Engineer</p>
+      </div>
+      <div
+        className={buzzword === 2 ? "buzzword visible" : "buzzword invisible"}
+      >
+        <p>Musician</p>
       </div>
     </div>
   );
@@ -65,8 +106,11 @@ function Hero() {
         <div className="name-container">
           <Name />
         </div>
-        <div className="info-container">
-          <Infos />
+        <div className="techstack-container">
+          <TechStack />
+        </div>
+        <div className="buzzwords-container">
+          <Buzzwords />
         </div>
       </div>
     </>
