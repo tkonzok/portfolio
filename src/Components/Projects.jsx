@@ -145,6 +145,7 @@ function Projects() {
 
   return (
     <div>
+      <h1>PROJECTS</h1>
       <div
         ref={ref1}
         className={
@@ -199,6 +200,7 @@ function Projects() {
         </div>
         <Technologies project={Dataset.data[1]} />
       </div>
+      <h2>More Projects</h2>
       <div
         ref={ref3}
         className={

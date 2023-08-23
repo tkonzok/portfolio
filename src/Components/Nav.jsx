@@ -13,6 +13,7 @@ function Nav({ currentPage, menuCollapsed, onClick }) {
       const pages = [
         ".hero-container",
         ".about-container",
+        ".skills-container",
         ".projects-container",
         ".contact-container",
       ];
@@ -20,7 +21,7 @@ function Nav({ currentPage, menuCollapsed, onClick }) {
       selectedPage.scrollIntoView({ behavior: "smooth" });
     };
 
-    const links = ["Home", "About", "Projects", "Contact"];
+    const links = ["Home", "About", "Skills", "Projects", "Contact"];
 
     const arrayLinks = links.map((link, index) => (
       <a

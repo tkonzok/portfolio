@@ -1,49 +1,11 @@
-import PropTypes from "prop-types";
-import { useState, useEffect, useRef } from "react";
-import { useInView } from "react-intersection-observer";
 import "../styles/style.css";
-import Github from "../assets/icons/github.svg";
-import Linkedin from "../assets/icons/linkedin.svg";
-import Xing from "../assets/icons/xing.svg";
-import GithubWhite from "../assets/icons/github_white.svg";
-import LinkedinWhite from "../assets/icons/linkedin_white.svg";
-import XingWhite from "../assets/icons/xing_white.svg";
-
-function Links() {
-  const { ref, inView, entry } = useInView({
-    threshold: 0,
-    triggerOnce: true,
-  });
-
-  return (
-    <div className="links" ref={ref}>
-      <a
-        href="https://github.com/tkonzok"
-        className={inView ? "link slide-in from-left delay2" : "link"}
-      >
-        <img src={GithubWhite} alt="GitHub icon" className="github" />
-      </a>
-      <a
-        href="https://linkedin.com/in/tobias-konzok"
-        className={inView ? "link slide-in from-left delay1-5" : "link"}
-      >
-        <img src={LinkedinWhite} alt="LinkedIN icon" className="linkedin" />
-      </a>
-      <a
-        href="https://xing.com/profile/tobias_konzok"
-        className={inView ? "link slide-in from-left delay1" : "link"}
-      >
-        <img src={XingWhite} alt="Xing icon" className="xing" />
-      </a>
-    </div>
-  );
-}
+import Links from "./Links.jsx";
 
 function About() {
   return (
     <div>
+      <h1>About Me</h1>
       <div className="about-me">
-        <h2>About Me</h2>
         <p>
           I am an experienced project engineer with in-depth knowledge in
           AV/media technology, complemented by good knowledge in web development
@@ -60,7 +22,7 @@ function About() {
         <p>
           This portfolio presents you an excerpt of my projects realized so far.
         </p>
-        <Links />
+        <Links effect="slide-in" />
       </div>
     </div>
   );

@@ -1,7 +1,5 @@
-import PropTypes from "prop-types";
-import { useState } from "react";
 import "../styles/style.css";
-import Email from "../assets/icons/email.svg";
+import Links from "./Links.jsx";
 import EmailWhite from "../assets/icons/email_white.svg";
 import ContactImg160 from "../assets/images/profile-pic-02_160.jpg";
 import ContactImg320 from "../assets/images/profile-pic-02_320.jpg";
@@ -22,23 +20,15 @@ function Contact() {
   return (
     <>
       <div>
-        <div className="contact-details">
-          <h2 className="span">Contact Me</h2>
-          <p className="span">
-            Open for new job opportunities. Feel free to get in touch.
-          </p>
-          <a href="mailto:konzok.tobias@gmail.com">
-            <img
-              src={EmailWhite}
-              alt="Email icon"
-              width="32px"
-              className="email"
-            />
-          </a>
-          <p>konzok.tobias@gmail.com</p>
-        </div>
-        <div className="contact-img-container">
-          <ContactImage />
+        <h1>Contact Me</h1>
+        <div>
+          <div className="contact-details">
+            <p>Open for new job opportunities. Feel free to get in touch.</p>
+            <Links />
+          </div>
+          <div className="contact-img-container">
+            <ContactImage />
+          </div>
         </div>
       </div>
     </>
