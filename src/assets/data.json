@@ -17,6 +17,14 @@
       "technologies": ["html", "css", "javascript", "react", "vite"]
     },
     {
+      "title": "Fake Shop",
+      "description": "React project on days 43 - ?? of <a href='https://theodinproject.com/lessons/node-path-react-new-shopping-cart'>'The Odin Project' web development course</a>. Main focus on routing and testing React with Vitest.",
+      "screenshot": "Screenshot_Shop",
+      "github": "https://github.com/tkonzok/odin-shopping-cart",
+      "livePreview": "https://nilpfred-shop.vercel.app/",
+      "technologies": ["html", "css", "javascript", "react", "vite", "vitest"]
+    },
+    {
       "title": "Battleship",
       "description": "JavaScript project on days 23 - 30 of <a href='https://theodinproject.com/lessons/node-path-javascript-battleship'>'The Odin Project' web development course</a>. Main focus on test driven development with Jest.",
       "screenshot": "Screenshot_Battleship",
