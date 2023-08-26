@@ -18,7 +18,7 @@
     },
     {
       "title": "Fake Shop",
-      "description": "React project on days 43 - ?? of <a href='https://theodinproject.com/lessons/node-path-react-new-shopping-cart'>'The Odin Project' web development course</a>. Main focus on routing and testing React with Vitest.",
+      "description": "React project on days 43 - 45 of <a href='https://theodinproject.com/lessons/node-path-react-new-shopping-cart'>'The Odin Project' web development course</a>. Main focus on routing and testing React with Vitest.",
       "screenshot": "Screenshot_Shop",
       "github": "https://github.com/tkonzok/odin-shopping-cart",
       "livePreview": "https://nilpfred-shop.vercel.app/",

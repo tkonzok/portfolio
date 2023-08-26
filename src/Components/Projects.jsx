@@ -21,7 +21,7 @@ import VitestLogo from "../assets/icons/vitest.svg";
 
 function Projects() {
   const animationDuration = 200; // milliseconds
-  const numberProjectsToShow = 9; // number of projects to fetch from data to prevent showing the older ones
+  const numberProjectsToShow = 8; // number of projects to fetch from data to prevent showing the older ones
   const [penultimateProject, setPenultimateProject] =
     useState(numberProjectsToShow);
   const [prevProject, setPrevProject] = useState(numberProjectsToShow + 1);
