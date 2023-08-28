@@ -65,7 +65,7 @@ function Projects() {
         setPenultimateProject(penultimateProject - 1);
         setNextButOneProject(nextProject);
       }
-    }, 1000);
+    }, 550);
   }
 
   useEffect(() => {
@@ -88,7 +88,7 @@ function Projects() {
         setPenultimateProject(prevProject);
         setNextButOneProject(nextButOneProject + 1);
       }
-    }, animationDuration);
+    }, 550);
   }
 
   const config = {

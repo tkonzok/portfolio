@@ -17,14 +17,21 @@ import PandasLogo from "../assets/icons/pandas.svg";
 import PyTorchLogo from "../assets/icons/pytorch.svg";
 import TypescriptLogo from "../assets/icons/typescript.svg";
 
-function Skillset({ skillset, inView }) {
+function Skillset({ skillset, skillName, inView }) {
   const array = skillset.map((skill, index) => (
-    <img
+    <div
       key={index}
-      className={inView ? "tech-logo inView" : "tech-logo"}
-      src={skill}
-      alt="Tech Stack Logo"
-    ></img>
+      className={inView ? "card-container inView show-flip" : "card-container"}
+    >
+      <div className="card">
+        <div className="card-front">
+          <img className="tech-logo" src={skill} alt="Tech Stack Logo"></img>
+        </div>
+        <div className="card-back">
+          <p className="tech-name">{skillName[index]}</p>
+        </div>
+      </div>
+    </div>
   ));
 
   return <>{array}</>;
@@ -56,6 +63,7 @@ function Skills() {
           <h2>Languages</h2>
           <Skillset
             skillset={[HtmlLogo, CssLogo, JsLogo, PythonLogo]}
+            skillName={["HTML", "CSS", "JavaScript", "Python"]}
             inView={inView1}
           />
         </div>
@@ -63,6 +71,7 @@ function Skills() {
           <h2>Libraries</h2>
           <Skillset
             skillset={[ReactLogo, PandasLogo, PyTorchLogo]}
+            skillName={["React", "Pandas", "PyTorch"]}
             inView={inView2}
           />
         </div>
@@ -70,6 +79,7 @@ function Skills() {
           <h2>Misc</h2>
           <Skillset
             skillset={[GitLogo, WebpackLogo, ViteLogo, JestLogo, VitestLogo]}
+            skillName={["Git", "webpack", "Vite", "Jest", "Vitest"]}
             inView={inView3}
           />
         </div>
@@ -77,6 +87,7 @@ function Skills() {
           <h2>Learning</h2>
           <Skillset
             skillset={[TypescriptLogo, NodeLogo, ExpressLogo, MongoLogo]}
+            skillName={["TypeScript", "Node.js", "Express.js", "MongoDB"]}
             inView={inView4}
           />
         </div>

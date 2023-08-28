@@ -75,7 +75,7 @@ function Buzzwords() {
   return (
     <div
       ref={ref}
-      className={inView ? "buzzwords slide-in from-bottom delay1" : "buzzwords"}
+      className={inView ? "buzzwords slide-in from-bottom delay3" : "buzzwords"}
     >
       <div
         className={buzzword === 0 ? "buzzword visible" : "buzzword invisible"}
