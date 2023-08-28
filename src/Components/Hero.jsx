@@ -57,7 +57,7 @@ function Buzzwords() {
     triggerOnce: true,
   });
 
-  const [buzzword, setBuzzword] = useState(2);
+  const [buzzword, setBuzzword] = useState(3);
 
   async function startNewInterval(msec) {
     await new Promise((resolve) => setTimeout(resolve, msec));
@@ -75,7 +75,7 @@ function Buzzwords() {
   return (
     <div
       ref={ref}
-      className={inView ? "buzzwords slide-in from-bottom delay3" : "buzzwords"}
+      className={inView ? "buzzwords slide-in from-bottom delay4" : "buzzwords"}
     >
       <div
         className={buzzword === 0 ? "buzzword visible" : "buzzword invisible"}

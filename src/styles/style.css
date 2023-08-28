@@ -21,6 +21,7 @@
   --orange-dark: hsl(20, 57%, 25%);
   --orange-light: hsl(20, 57%, 65%);
   --navbar-height: 60px;
+  --footer-height: 60px;
   --colorpalette-black: #191919;
   --colorpalette-grey: #313131;
   --colorpalette-blue: #2d4263;
@@ -372,30 +373,25 @@ nav.bg-red h3 {
 .visible.buzzword {
   transform: translateY(3vh);
   opacity: 0;
-  animation-name: slide-in-buzzword;
-  animation-duration: 1s;
-  animation-delay: 1s;
+  animation-name: show-buzzword;
+  animation-duration: 4s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
 }
 
-@keyframes slide-in-buzzword {
-  100% {
+@keyframes show-buzzword {
+  0% {
+    transform: translateY(3vh);
+    opacity: 0;
+  }
+  25% {
     transform: translateY(0px);
     opacity: 1;
   }
-}
-
-.invisible.buzzword {
-  transform: translateY(0px);
-  opacity: 1;
-  animation-name: slide-out-buzzword;
-  animation-duration: 1s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-}
-
-@keyframes slide-out-buzzword {
+  75% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
   100% {
     transform: translateY(-3vh);
     opacity: 0;
@@ -572,7 +568,7 @@ nav.bg-red h3 {
 
 .card-container.show-flip .card {
   animation-name: show-flip;
-  animation-duration: 5s;
+  animation-duration: 4s;
   animation-timing-function: ease-in-out;
 }
 
@@ -1096,7 +1092,7 @@ nav.bg-red h3 {
 .contact-container > div {
   background-color: var(--colorpalette-black);
   width: min(1200px, 100%);
-  min-height: 100vh;
+  min-height: calc(100vh - var(--footer-height));
   margin: 0 auto;
   padding: min(7.5vh, 100px) 10vw;
   display: flex;
@@ -1602,4 +1598,50 @@ nav.bg-red h3 {
     height: min(58vh, 33vw);
     transform: rotateY(-10deg);
   }
+}
+
+/* FOOTER */
+
+footer {
+  width: 100%;
+  height: calc(var(--footer-height) + 1px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  background-color: #00000000;
+  z-index: 99;
+}
+
+.foooter-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 2fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container a {
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 8px;
+}
+
+.footer-container img {
+  height: 24px;
+}
+
+.footer-container p {
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
