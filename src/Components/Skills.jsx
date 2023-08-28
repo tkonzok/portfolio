@@ -12,6 +12,7 @@ import ViteLogo from "../assets/icons/vite.svg";
 import VitestLogo from "../assets/icons/vitest.svg";
 import NodeLogo from "../assets/icons/nodejs.svg";
 import MongoLogo from "../assets/icons/mongodb.svg";
+import ExpressLogo from "../assets/icons/express.svg";
 import PandasLogo from "../assets/icons/pandas.svg";
 import PyTorchLogo from "../assets/icons/pytorch.svg";
 import TypescriptLogo from "../assets/icons/typescript.svg";
@@ -75,7 +76,7 @@ function Skills() {
         <div className="learning" ref={ref4}>
           <h2>Learning</h2>
           <Skillset
-            skillset={[TypescriptLogo, NodeLogo, MongoLogo]}
+            skillset={[TypescriptLogo, NodeLogo, ExpressLogo, MongoLogo]}
             inView={inView4}
           />
         </div>

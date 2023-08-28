@@ -105,12 +105,12 @@ function Hero() {
         </div>
         <div className="name-container">
           <Name />
+          <div className="buzzwords-container">
+            <Buzzwords />
+          </div>
         </div>
         <div className="techstack-container">
           <TechStack />
-        </div>
-        <div className="buzzwords-container">
-          <Buzzwords />
         </div>
       </div>
     </>

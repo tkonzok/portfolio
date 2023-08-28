@@ -200,9 +200,10 @@ function Projects() {
         </div>
         <Technologies project={Dataset.data[1]} />
       </div>
-      <h2>More Projects</h2>
+      <h2 ref={ref3} className={inView3 ? "inView" : ""}>
+        More Projects
+      </h2>
       <div
-        ref={ref3}
         className={
           inView3
             ? "project-carousel-container inView"

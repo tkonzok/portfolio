@@ -56,7 +56,8 @@ h1 {
   font-family: "Open Sans", sans-serif;
   font-family: "League Spartan", sans-serif;
   font-size: min(16vh, 12.5vw, 84px);
-  font-weight: 900;
+  font-weight: 700;
+  margin: 0;
 }
 
 h2 {
@@ -64,7 +65,7 @@ h2 {
   font-family: "Open Sans", sans-serif;
   font-family: "League Spartan", sans-serif;
   font-size: min(12vh, 8vw, 64px);
-  font-weight: 900;
+  font-weight: 700;
 }
 
 a {
@@ -274,8 +275,8 @@ nav.bg-red h3 {
 }
 
 .menu-links.shown {
-  transform: translateX(max(-200px, -30vw));
-  -webkit-transform: translateX(max(-200px, -30vw));
+  transform: translateX(min(-200px, -30vw));
+  -webkit-transform: translateX(min(-200px, -30vw));
 }
 
 .menu-links > a {
@@ -355,45 +356,17 @@ nav.bg-red h3 {
   margin: 0;
 }
 
-.techstack-container {
-  width: 100%;
-  position: absolute;
-  top: 40vh;
-  left: min(480px, 40vw);
-}
-
-.stack {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.stack .logo {
-  opacity: 0;
-  width: min(10vh, 10vw, 64px);
-}
-
 .buzzwords-container {
-  width: 100%;
-  position: absolute;
-  top: min(40vw, 30vh);
-  right: min(420px, 35vw);
+  position: relative;
 }
 
 .buzzwords {
-  font-size: min(40px, 3vh, 7.5vw);
+  font-size: min(40px, 5vh, 7.5vw);
 }
 
 .buzzword {
   position: absolute;
   opacity: 0;
-  top: 0;
-  width: 100%;
-  text-align: center;
 }
 
 .visible.buzzword {
@@ -429,6 +402,27 @@ nav.bg-red h3 {
   }
 }
 
+.techstack-container {
+  position: absolute;
+  top: var(--navbar-height);
+  right: 16px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stack .logo {
+  opacity: 0;
+  width: 32px;
+}
+
 /* ABOUT */
 .about-container {
   width: 100%;
@@ -441,7 +435,7 @@ nav.bg-red h3 {
   width: min(1200px, 100%);
   height: 100%;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: min(7.5vh, 100px) 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -499,7 +493,7 @@ nav.bg-red h3 {
   width: min(1200px, 100%);
   height: 100%;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: min(7.5vh, 100px) 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -509,7 +503,7 @@ nav.bg-red h3 {
 
 .skills {
   width: min(960px, 100vh, 80vw);
-  padding: 24px;
+  padding: 7.5vh 24px 24px;
   gap: 24px;
   display: flex;
   flex-direction: column;
@@ -579,7 +573,8 @@ nav.bg-red h3 {
 
 /* PROJECTS */
 :root {
-  --carousel-size: min(600px, 80vw, 60vh);
+  --carousel-width: min(600px, 80vw, 60vh);
+  --carousel-height: min(660px, 88vw, 66vh);
 }
 
 .projects-container {
@@ -596,8 +591,8 @@ nav.bg-red h3 {
   height: 100%;
   width: min(1200px, 100%);
   margin: 0 auto;
-  padding: 100px 0;
-  gap: 100px;
+  padding: min(7.5vh, 100px) 0;
+  gap: min(7.5vh, 100px);
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -608,7 +603,9 @@ nav.bg-red h3 {
 }
 
 .primaryProject,
-.secondaryProject {
+.secondaryProject,
+.projects-container div h2,
+.project-carousel-container {
   opacity: 0;
   transform: translateY(100px);
   transition:
@@ -617,7 +614,7 @@ nav.bg-red h3 {
 }
 
 .projects-container div h2 {
-  margin: -50px;
+  margin-bottom: -50px;
 }
 
 .project-carousel-container {
@@ -628,18 +625,14 @@ nav.bg-red h3 {
   padding: 24px;
   max-width: min(960px, 100vh);
   overflow: hidden;
-  border-radius: clamp(8px, calc(var(--carousel-size) * 0.02), 16px);
+  border-radius: clamp(8px, calc(var(--carousel-width) * 0.02), 16px);
   box-shadow: 2px 2px 10px 2px #000;
   background-color: var(--colorpalette-black);
-  opacity: 0;
-  transform: translateY(100px);
-  transition:
-    transform 1s ease-out,
-    opacity 1.5s ease-in;
 }
 
 .primaryProject.inView,
 .secondaryProject.inView,
+.projects-container > div > h2.inView,
 .project-carousel-container.inView {
   transform: translateY(0px);
   opacity: 1;
@@ -648,19 +641,19 @@ nav.bg-red h3 {
 .project-carousel {
   position: relative;
   display: flex;
-  height: var(--carousel-size);
+  height: var(--carousel-height);
 }
 
 .project-card {
   position: relative;
-  width: var(--carousel-size);
-  height: var(--carousel-size);
+  width: var(--carousel-width);
+  height: var(--carousel-height);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows:
-    calc(var(--carousel-size) * 0.75) calc(var(--carousel-size) * 0.18)
-    calc(var(--carousel-size) * 0.07);
-  border-radius: clamp(8px, calc(var(--carousel-size) * 0.02), 16px);
+    calc(var(--carousel-height) * 0.69) calc(var(--carousel-height) * 0.24)
+    calc(var(--carousel-height) * 0.07);
+  border-radius: clamp(8px, calc(var(--carousel-width) * 0.02), 16px);
   overflow: hidden;
   margin: 0 auto;
   box-shadow: 2px 2px 10px 2px #000;
@@ -671,9 +664,9 @@ nav.bg-red h3 {
   display: grid;
   grid-template-columns: 1fr repeat(
       2,
-      min(calc(var(--carousel-size) * 0.08), 64px)
+      min(calc(var(--carousel-width) * 0.08), 64px)
     );
-  grid-template-rows: 4fr 5fr;
+  grid-template-rows: 3fr 5fr;
   background-color: var(--colorpalette-red);
   overflow: hidden;
 }
@@ -687,19 +680,19 @@ nav.bg-red h3 {
   height: 100%;
   grid-column: span 3;
   object-fit: cover;
-  border-top-left-radius: clamp(8px, calc(var(--carousel-size) * 0.02), 16px);
-  border-top-right-radius: clamp(8px, calc(var(--carousel-size) * 0.02), 16px);
+  border-top-left-radius: clamp(8px, calc(var(--carousel-width) * 0.02), 16px);
+  border-top-right-radius: clamp(8px, calc(var(--carousel-width) * 0.02), 16px);
 }
 
 .project-name {
   margin: auto;
   padding: auto;
-  font-size: calc(var(--carousel-size) / 20);
+  font-size: calc(var(--carousel-width) / 20);
 }
 
 .project-link {
-  width: min(calc(var(--carousel-size) * 0.06), 48px);
-  height: min(calc(var(--carousel-size) * 0.06), 48px);
+  width: min(calc(var(--carousel-width) * 0.06), 48px);
+  height: min(calc(var(--carousel-width) * 0.06), 48px);
   margin: auto;
 }
 
@@ -710,7 +703,7 @@ nav.bg-red h3 {
 
 .project-description {
   grid-column: span 3;
-  font-size: calc(var(--carousel-size) / 40);
+  font-size: calc(var(--carousel-width) / 30);
   margin: 0 auto auto;
   padding: 0 2%;
 }
@@ -916,23 +909,23 @@ nav.bg-red h3 {
   color: #fff;
   position: absolute;
   width: 10vw;
-  height: calc(var(--carousel-size));
+  height: calc(var(--carousel-height));
   background-color: #00000000;
   border: 0;
   padding: 0;
 }
 
 .prevButton {
-  left: calc(var(--carousel-size) * 2 - 10vw);
+  left: calc(var(--carousel-width) * 2 - 10vw);
 }
 
 .nextButton {
-  right: calc(var(--carousel-size) * 2 - 10vw);
+  right: calc(var(--carousel-width) * 2 - 10vw);
 }
 
 .prevButton > img,
 .nextButton > img {
-  width: calc(var(--carousel-size) * 0.05);
+  width: calc(var(--carousel-width) * 0.05);
   margin: auto;
 }
 
@@ -970,7 +963,7 @@ nav.bg-red h3 {
   width: min(1200px, 100%);
   min-height: 100vh;
   margin: 0 auto;
-  padding: 100px 10vw;
+  padding: min(7.5vh, 100px) 10vw;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -1127,6 +1120,16 @@ nav.bg-red h3 {
   }
 }
 
+@media (min-width: 1024px) {
+  .techstack-container {
+    right: calc(50% + 32px - min(600px, 50%));
+  }
+
+  .stack .logo {
+    width: 64px;
+  }
+}
+
 /* ABOUT */
 
 @media (min-aspect-ratio: 1.1) {
@@ -1139,10 +1142,10 @@ nav.bg-red h3 {
     width: min(20vh, 180px);
   }
   .prevButton {
-    left: calc(var(--carousel-size) * 2 - min(20vh, 180px));
+    left: calc(var(--carousel-width) * 2 - min(20vh, 180px));
   }
   .nextButton {
-    right: calc(var(--carousel-size) * 2 - min(20vh, 180px));
+    right: calc(var(--carousel-width) * 2 - min(20vh, 180px));
   }
 
   .prevButton > img {
@@ -1155,12 +1158,12 @@ nav.bg-red h3 {
 
   .penultimateProject,
   .prevProject {
-    right: calc((min(960px, 100vh) - var(--carousel-size)) / 6);
+    right: calc((min(960px, 100vh) - var(--carousel-width)) / 6);
   }
 
   .nextProject,
   .nextButOneProject {
-    left: calc((min(960px, 100vh) - var(--carousel-size)) / 6);
+    left: calc((min(960px, 100vh) - var(--carousel-width)) / 6);
   }
 
   @keyframes to-left-0 {
