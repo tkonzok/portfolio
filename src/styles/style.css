@@ -808,19 +808,27 @@ nav.bg-red h3 {
   right: 5vw;
   opacity: 0.5;
 }
-
+/*
 .penultimateProject[toprev="1"] {
   animation-name: to-right-0-5-50;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
 }
+*/
+.penultimateProject[toprev="1"] {
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+  opacity: 0.5;
+  transform: translateX(var(--carousel-width));
+}
 
 .prevProject {
   right: 5vw;
   opacity: 0.5;
 }
-
+/*
 .prevProject[toprev="1"] {
   animation-name: to-right-1;
   animation-duration: 0.5s;
@@ -834,13 +842,30 @@ nav.bg-red h3 {
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
 }
+*/
+
+.prevProject[toprev="1"] {
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+  opacity: 1;
+  transform: translateX(var(--carousel-neighbor-right));
+}
+
+.prevProject[tonext="1"] {
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+  opacity: 0.5;
+  transform: translateX(var(--carousel-neighbor-left));
+}
 
 .currentProject {
   left: 0;
   right: 0;
   opacity: 1;
 }
-
+/*
 .currentProject[toprev="1"] {
   animation-name: to-right-0-5;
   animation-duration: 0.5s;
@@ -854,12 +879,28 @@ nav.bg-red h3 {
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
 }
+*/
+.currentProject[toprev="1"] {
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+  opacity: 0.5;
+  transform: translateX(var(--carousel-neighbor-right));
+}
+
+.currentProject[tonext="1"] {
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+  opacity: 0.5;
+  transform: translateX(var(--carousel-neighbor-left));
+}
 
 .nextProject {
   left: 5vw;
   opacity: 0.5;
 }
-
+/*
 .nextProject[toprev="1"] {
   animation-name: to-right-0;
   animation-duration: 0.5s;
@@ -873,17 +914,41 @@ nav.bg-red h3 {
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
 }
+*/
+.nextProject[toprev="1"] {
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+  opacity: 0.5;
+  transform: translateX(var(--carousel-neighbor-right));
+}
+
+.nextProject[tonext="1"] {
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+  opacity: 1;
+  transform: translateX(var(--carousel-neighbor-left));
+}
 
 .nextButOneProject {
   left: 5vw;
   opacity: 0.5;
 }
-
+/*
 .nextButOneProject[tonext="1"] {
   animation-name: to-left-0-5-50;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
+}
+*/
+.nextButOneProject[tonext="1"] {
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+  opacity: 0.5;
+  transform: translateX(var(--carousel-width-left));
 }
 
 @keyframes to-left-0 {

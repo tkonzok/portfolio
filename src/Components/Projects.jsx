@@ -20,7 +20,7 @@ import ViteLogo from "../assets/icons/vite.svg";
 import VitestLogo from "../assets/icons/vitest.svg";
 
 function Projects() {
-  const animationDuration = 200; // milliseconds
+  const animationDuration = 500; // milliseconds
   const numberProjectsToShow = 8; // number of projects to fetch from data to prevent showing the older ones
   const [penultimateProject, setPenultimateProject] =
     useState(numberProjectsToShow);
@@ -65,7 +65,8 @@ function Projects() {
         setPenultimateProject(penultimateProject - 1);
         setNextButOneProject(nextProject);
       }
-    }, 550);
+      setToPrev(0);
+    }, animationDuration);
   }
 
   useEffect(() => {
@@ -88,7 +89,8 @@ function Projects() {
         setPenultimateProject(prevProject);
         setNextButOneProject(nextButOneProject + 1);
       }
-    }, 550);
+      setToNext(0);
+    }, animationDuration);
   }
 
   const config = {
