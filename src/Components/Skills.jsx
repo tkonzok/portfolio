@@ -15,6 +15,8 @@ import MongoLogo from "../assets/icons/mongodb.svg";
 import ExpressLogo from "../assets/icons/express.svg";
 import PandasLogo from "../assets/icons/pandas.svg";
 import PyTorchLogo from "../assets/icons/pytorch.svg";
+import NumpyLogo from "../assets/icons/numpy.svg";
+import TensorflowLogo from "../assets/icons/tensorflow.svg";
 import TypescriptLogo from "../assets/icons/typescript.svg";
 
 function Skillset({ skillset, skillName, inView }) {
@@ -59,35 +61,56 @@ function Skills() {
     <div>
       <h1>Skills</h1>
       <div className="skills">
-        <div className="primary" ref={ref1}>
-          <h2>Languages</h2>
+        <div className="frontend" ref={ref1}>
+          <h2>Frontend</h2>
           <Skillset
-            skillset={[HtmlLogo, CssLogo, JsLogo, PythonLogo]}
-            skillName={["HTML", "CSS", "JavaScript", "Python"]}
+            skillset={[HtmlLogo, CssLogo, JsLogo, ReactLogo]}
+            skillName={["HTML", "CSS", "JavaScript", "React"]}
             inView={inView1}
           />
         </div>
-        <div className="secondary" ref={ref2}>
-          <h2>Libraries</h2>
+        <div className="backend" ref={ref2}>
+          <h2>Backend</h2>
           <Skillset
-            skillset={[ReactLogo, PandasLogo, PyTorchLogo]}
-            skillName={["React", "Pandas", "PyTorch"]}
+            skillset={[PythonLogo, NodeLogo, MongoLogo]}
+            skillName={["Python", "Node.js", "MongoDB"]}
             inView={inView2}
           />
         </div>
         <div className="misc" ref={ref3}>
           <h2>Misc</h2>
           <Skillset
-            skillset={[GitLogo, WebpackLogo, ViteLogo, JestLogo, VitestLogo]}
-            skillName={["Git", "webpack", "Vite", "Jest", "Vitest"]}
+            skillset={[
+              GitLogo,
+              WebpackLogo,
+              ViteLogo,
+              JestLogo,
+              VitestLogo,
+              NumpyLogo,
+              PandasLogo,
+            ]}
+            skillName={[
+              "Git",
+              "webpack",
+              "Vite",
+              "Jest",
+              "Vitest",
+              "NumPy",
+              "Pandas",
+            ]}
             inView={inView3}
           />
         </div>
         <div className="learning" ref={ref4}>
           <h2>Learning</h2>
           <Skillset
-            skillset={[TypescriptLogo, NodeLogo, ExpressLogo, MongoLogo]}
-            skillName={["TypeScript", "Node.js", "Express.js", "MongoDB"]}
+            skillset={[
+              TypescriptLogo,
+              ExpressLogo,
+              PyTorchLogo,
+              TensorflowLogo,
+            ]}
+            skillName={["TypeScript", "Express.js", "PyTorch", "TensorFlow"]}
             inView={inView4}
           />
         </div>

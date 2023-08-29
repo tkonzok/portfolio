@@ -30,7 +30,7 @@
       "screenshot": "Screenshot_Battleship",
       "github": "https://github.com/tkonzok/odin-battleship-game",
       "livePreview": "https://tkonzok.github.io/odin-battleship-game",
-      "technologies": ["html", "css", "javascript", "webpack", "babel", "jest"]
+      "technologies": ["html", "css", "javascript", "webpack", "jest"]
     },
     {
       "title": "Interactive CV Generator",
