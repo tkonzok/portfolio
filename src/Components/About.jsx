@@ -40,7 +40,7 @@ function About() {
           <h2>In-Depth Knowledge</h2>
           <ul>
             <li>AV/Media Technology</li>
-            <li>Fullstack Development with JavaScript & Node.js</li>
+            <li>JavaScript, Python & Node.js</li>
           </ul>
         </div>
         <div>
