@@ -57,14 +57,12 @@ function Buzzwords() {
     triggerOnce: true,
   });
 
-  const [buzzword, setBuzzword] = useState(3);
+  const [buzzword, setBuzzword] = useState(-1);
 
   async function startNewInterval(msec) {
     await new Promise((resolve) => setTimeout(resolve, msec));
-    if (buzzword < 2) {
+    if (buzzword < 3) {
       setBuzzword(buzzword + 1);
-    } else {
-      setBuzzword(0);
     }
   }
 

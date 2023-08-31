@@ -1,10 +1,24 @@
-import { useState, useRef, useEffect } from "react";
+import { useSwipeable } from "react-swipeable";
 import "../styles/style.css";
 import MenuIconWhite from "../assets/icons/menu_white.svg";
 import MenuIcon from "../assets/icons/menu.svg";
 
 function Nav({ currentPage, menuCollapsed, onClick }) {
   function Menu({ currentPage, menuCollapsed, onClick }) {
+    const swipeConfig = {
+      delta: 10,
+      preventDefaultTouchMove: false,
+      trackTouch: true,
+      trackMouse: true,
+      rotationAngle: 0,
+    };
+
+    const swipeHandlers = useSwipeable({
+      onSwipedLeft: () => onClick(false),
+      onSwipedRight: () => onClick(true),
+      ...swipeConfig,
+    });
+
     const handleClick = () => {
       return onClick(!menuCollapsed);
     };
@@ -40,23 +54,28 @@ function Nav({ currentPage, menuCollapsed, onClick }) {
     ));
 
     return (
-      <div className="menu">
-        <button
-          className={menuCollapsed ? "menu-btn collapsed" : "menu-btn extended"}
-          onClick={handleClick}
-        >
-          <img
-            src={menuCollapsed ? MenuIconWhite : MenuIcon}
-            alt="Menu icon"
-            width="32px"
-          />
-        </button>
-        <div
-          className={menuCollapsed ? "menu-links hidden" : "menu-links shown"}
-        >
-          {arrayLinks}
+      <>
+        <div className="menu">
+          <button
+            className={
+              menuCollapsed ? "menu-btn collapsed" : "menu-btn extended"
+            }
+            onClick={handleClick}
+          >
+            <img
+              src={menuCollapsed ? MenuIconWhite : MenuIcon}
+              alt="Menu icon"
+              width="32px"
+            />
+          </button>
+          <div
+            className={menuCollapsed ? "menu-links hidden" : "menu-links shown"}
+          >
+            <div {...swipeHandlers} className="menu-swipe-container"></div>
+            {arrayLinks}
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
