@@ -43,6 +43,7 @@ function Nav({ currentPage, menuCollapsed, onClick }) {
         onClick={() => {
           {
             jumpToPage(index);
+            onClick(true);
           }
         }}
         className={

@@ -297,21 +297,22 @@ nav.bg-red h3 {
   -webkit-transform: translateX(min(-200px, -30vw));
 }
 
-.menu-swipe-container {
+.menu-links.shown > .menu-swipe-container {
   position: absolute;
   top: 0;
+  right: 0;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   z-index: 901;
 }
 
-.menu-links.shown > .menu-swipe-container {
-  right: 0;
-}
-
 .menu-links.hidden > .menu-swipe-container {
-  left: -300px;
-  background-color: green;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50px;
+  z-index: 901;
 }
 
 .menu-links > a {
