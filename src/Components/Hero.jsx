@@ -38,13 +38,13 @@ function Name() {
 function TechStack() {
   return (
     <div className="stack">
-      <div className="logo fade-in delay2">
+      <div className="logo slide-in from-right delay2">
         <img src={ReactLogo} alt="React Logo"></img>
       </div>
-      <div className="logo fade-in delay3">
+      <div className="logo slide-in from-right delay3">
         <img src={JsLogo} alt="JavaScript Logo"></img>
       </div>
-      <div className="logo fade-in delay4">
+      <div className="logo slide-in from-right delay4">
         <img src={PythonLogo} alt="Python Logo"></img>
       </div>
     </div>

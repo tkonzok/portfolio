@@ -72,8 +72,8 @@ function Skills() {
         <div className="backend" ref={ref2}>
           <h2>Backend</h2>
           <Skillset
-            skillset={[PythonLogo, NodeLogo, MongoLogo]}
-            skillName={["Python", "Node.js", "MongoDB"]}
+            skillset={[PythonLogo, NodeLogo, ExpressLogo, MongoLogo]}
+            skillName={["Python", "Node.js", "Express.js", "MongoDB"]}
             inView={inView2}
           />
         </div>
@@ -104,13 +104,8 @@ function Skills() {
         <div className="learning" ref={ref4}>
           <h2>Learning</h2>
           <Skillset
-            skillset={[
-              TypescriptLogo,
-              ExpressLogo,
-              PyTorchLogo,
-              TensorflowLogo,
-            ]}
-            skillName={["TypeScript", "Express.js", "PyTorch", "TensorFlow"]}
+            skillset={[TypescriptLogo, PyTorchLogo, TensorflowLogo]}
+            skillName={["TypeScript", "PyTorch", "TensorFlow"]}
             inView={inView4}
           />
         </div>

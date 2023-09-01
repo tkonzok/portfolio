@@ -777,6 +777,8 @@ li.inView {
 :root {
   --carousel-width: min(600px, 80vw, 60vh);
   --carousel-height: min(660px, 88vw, 66vh);
+  --carousel-width-widescreen: min(500px, 80vw, 60vh);
+  --carousel-height-widescreen: min(550px, 88vw, 66vh);
   --carousel-neighbor-right: calc(5vw + min(600px, 80vw, 60vh));
   --carousel-neighbor-left: calc(-5vw - min(600px, 80vw, 60vh));
   --carousel-width-left: calc(0vw - min(600px, 80vw, 60vh));
@@ -1335,7 +1337,52 @@ footer {
 @media (min-aspect-ratio: 1.6) {
   .projects-container > div {
     display: grid;
-    grid-template-columns: repeat(2, var(--carousel-width));
+    grid-template-columns: repeat(2, var(--carousel-width-widescreen));
+  }
+
+  .primaryProject,
+  .secondaryProject {
+    width: var(--carousel-width-widescreen);
+    height: var(--carousel-height-widescreen);
+    grid-template-rows:
+      calc(var(--carousel-height-widescreen) * 0.69) calc(
+        var(--carousel-height-widescreen) * 0.24
+      )
+      calc(var(--carousel-height-widescreen) * 0.07);
+  }
+
+  .primaryProject > .content,
+  .secondaryProject > .content {
+    grid-template-columns: 1fr repeat(
+        2,
+        min(calc(var(--carousel-width-widescreen) * 0.08), 64px)
+      );
+  }
+
+  .project-image {
+    border-top-left-radius: clamp(
+      8px,
+      calc(var(--carousel-width-widescreen) * 0.02),
+      16px
+    );
+    border-top-right-radius: clamp(
+      8px,
+      calc(var(--carousel-width-widescreen) * 0.02),
+      16px
+    );
+  }
+
+  .project-name {
+    font-size: calc(var(--carousel-width-widescreen) / 20);
+  }
+
+  .project-link {
+    width: min(calc(var(--carousel-width-widescreen) * 0.06), 48px);
+    height: min(calc(var(--carousel-width-widescreen) * 0.06), 48px);
+  }
+
+  .project-description {
+    font-size: calc(var(--carousel-width-widescreen) / 30);
   }
 
   .projects-container > div > *:not(.primaryProject, .secondaryProject) {
