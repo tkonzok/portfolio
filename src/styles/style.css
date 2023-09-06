@@ -602,6 +602,7 @@ li.inView {
   color: #fff;
   gap: 8px;
   margin: auto 0 16px;
+  cursor: pointer;
 }
 
 .next-example img,
@@ -657,7 +658,7 @@ li.inView {
 .work-experience-carousel {
   position: relative;
   width: 80vw;
-  height: 66vh;
+  height: 60vh;
   border-radius: 8px;
   margin: auto;
   padding: 0;
