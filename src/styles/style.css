@@ -302,7 +302,7 @@ nav.bg-red h3 {
   top: 0;
   right: 0;
   height: 100%;
-  width: 100vw;
+  width: clamp(125px, 30vw, 200px);
   z-index: 901;
 }
 
@@ -1289,9 +1289,21 @@ footer {
 }
 
 /* ABOUT */
+@media (min-width: 1200px) {
+  .about-me > div {
+    font-size: min(4vw, 2vh, 2rem);
+  }
+}
 
 /* PROJECTS */
 @media (min-aspect-ratio: 0.75) {
+  :root {
+    --carousel-neighbor-right: calc(min(960px, 100vh) - var(--carousel-width)) /
+      6 + min(600px, 80vw, 60vh);
+    --carousel-neighbor-left: calc(var(--carousel-width)) / 6 -
+      min(960px, 100vh) - min(600px, 80vw, 60vh);
+  }
+
   .prevButton,
   .nextButton {
     width: min(20vh, 180px);
@@ -1323,6 +1335,13 @@ footer {
 }
 
 @media (min-aspect-ratio: 1.2) {
+  :root {
+    --carousel-neighbor-right: calc(min(6.66vh, 60px) + min(600px, 80vw, 60vh));
+    --carousel-neighbor-left: calc(
+      0vw - min(6.66vh, 60px) - min(600px, 80vw, 60vh)
+    );
+  }
+
   .penultimateProject,
   .prevProject {
     right: min(6.66vh, 60px);
