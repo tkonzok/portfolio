@@ -35,6 +35,7 @@ function WorkExperience() {
           src="https://eventelevator.de/wp-content/uploads/2019/05/ASC-AIDAnova-7-1024x576.jpg"
           alt="Picture of Project"
         />
+        <p className="credits">Photo by EventElevator</p>
         <p className="example-name">AIDAnova - Theatrium</p>
       </div>
       <p
@@ -65,9 +66,11 @@ function WorkExperience() {
           installation and commissioning span on site to finally hand over the
           system to the customer.{" "}
         </p>
-        <a href="https://eventelevator.de/allgemein/medientechnik-von-amptown-system-company-im-theatrium-der-aidanova/">
-          Read more about our job on AIDAnova (in German)
-        </a>
+        <button>
+          <a href="https://eventelevator.de/allgemein/medientechnik-von-amptown-system-company-im-theatrium-der-aidanova/">
+            Read more about our job on AIDAnova (in German)
+          </a>
+        </button>
       </p>
       <div
         className={
@@ -78,6 +81,7 @@ function WorkExperience() {
           src="https://eventelevator.de/wp-content/uploads/2019/07/ASC-Time-Machine-Restaurant-1-1024x576.jpg"
           alt="Picture of Project"
         />
+        <p className="credits">Photo by EventElevator</p>
         <p className="example-name">
           AIDAnova - Dinner Entertainment Restaurant
         </p>
@@ -107,12 +111,16 @@ function WorkExperience() {
           amount of technology to be installed forced us to adapt engineering
           many times.
         </p>
-        <a href="https://eventelevator.de/allgemein/asc-stattet-das-time-machine-restaurant-auf-der-aidanova-aus/">
-          Read more about our job in the restaurant (in German)
-        </a>
-        <a href="https://www.youtube.com/watch?v=GSxFcM_-K_Q">
-          Rather watch a video?
-        </a>
+        <button>
+          <a href="https://eventelevator.de/allgemein/asc-stattet-das-time-machine-restaurant-auf-der-aidanova-aus/">
+            Read more about our job in the restaurant (in German)
+          </a>
+        </button>
+        <button>
+          <a href="https://www.youtube.com/watch?v=GSxFcM_-K_Q">
+            Rather watch a video?
+          </a>
+        </button>
       </p>
       <div
         className={
@@ -123,6 +131,7 @@ function WorkExperience() {
           src="https://cruisetricks.de/bilder/albums/Costa-Toscana/Entertainment/costa-toscana-entertainment-atrium-colosseo-20220614_142802.jpg"
           alt="Picture of Project"
         />
+        <p className="credits">Photo by cruisetricks.de</p>
         <p className="example-name">Costa Smeralda - Colosseo</p>
       </div>
       <p
@@ -160,6 +169,7 @@ function WorkExperience() {
           src="https://www.royalcaribbeanblog.com/sites/default/files/blog-images/Moment_Factory_Royal_Caribbean_Vistarama-3.jpg?itok=EtMfPQgL"
           alt="Picture of Project"
         />
+        <p className="credits">Photo by Moment Factory</p>
         <p className="example-name">Royal Caribbean Quantum class - Two70</p>
       </div>
       <p
@@ -188,12 +198,16 @@ function WorkExperience() {
           screens. Robots and their movement was done by ABB who we spent a lot
           of time with to synchronize movement and images.
         </p>
-        <a href="https://royalcaribbeanblog.com/2016/08/21/everything-about-two70-royal-caribbeans-anthem-of-the-seas">
-          Read More about Two70
-        </a>
-        <a href="https://www.youtube.com/watch?v=Ns2QJk2--Rk">
-          Rather watch a video?
-        </a>
+        <button>
+          <a href="https://royalcaribbeanblog.com/2016/08/21/everything-about-two70-royal-caribbeans-anthem-of-the-seas">
+            Read More about Two70
+          </a>
+        </button>
+        <button>
+          <a href="https://www.youtube.com/watch?v=Ns2QJk2--Rk">
+            Rather watch a video?
+          </a>
+        </button>
       </p>
     </div>
   );
@@ -254,7 +268,7 @@ function About() {
                 step by step.
               </p>
               <button className="show-modal" onClick={() => setShowModal(true)}>
-                Want to see some more?
+                Work Experience
               </button>
             </>
           )}
@@ -318,16 +332,23 @@ function About() {
         </div>
       </div>
       <div
-        className={showModal ? "work-experience visible" : "work-experience"}
+        className={
+          showModal
+            ? "work-experience-container visible"
+            : "work-experience-container"
+        }
       >
-        <h2>Working Experience</h2>
-        <p>
-          These are projects I was technically responsible for the video system:
-        </p>
-        <WorkExperience />
-        <button className="close" onClick={() => setShowModal(false)}>
-          Return to main page
-        </button>
+        <div className="work-experience">
+          <h3>Work Experience</h3>
+          <p>
+            These are projects I was technically responsible for the video
+            system:
+          </p>
+          <WorkExperience />
+          <button className="close" onClick={() => setShowModal(false)}>
+            Return to main page
+          </button>
+        </div>
       </div>
     </div>
   );

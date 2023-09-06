@@ -90,7 +90,7 @@ a > img:hover {
   width: 2.5rem;
   height: 2.5rem;
   position: fixed;
-  z-index: 905;
+  z-index: 890;
   bottom: 7.5%;
   left: calc(50% - min(50%, 600px) - 20px + min(1080px, 90%));
   cursor: pointer;
@@ -533,6 +533,11 @@ nav.bg-red h3 {
   transform: scale(1.1);
 }
 
+.show-modal {
+  margin: 8px;
+  font-weight: 700;
+}
+
 ul {
   width: 80%;
   height: 100%;
@@ -577,27 +582,35 @@ li.inView {
   height: 100%;
 }
 
-.work-experience {
+.work-experience-container {
   position: fixed;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  justify-content: end;
   height: calc(96vh - var(--navbar-height));
   width: 98vw;
   top: calc(var(--navbar-height) + 2vh);
   left: -100vw;
-  opacity: 0;
   background-color: var(--colorpalette-grey);
   z-index: 899;
+  transition: transform 1s ease-in-out;
 }
 
-.work-experience.visible {
+.work-experience-container.visible {
   transform: translateX(100vw);
-  opacity: 1;
 }
 
-.work-experience h2 {
+.work-experience {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: min(100%, 1152px);
+}
+
+.work-experience h3 {
+  font-size: 24px;
   margin: 0;
   margin-top: 2vh;
 }
@@ -613,14 +626,15 @@ li.inView {
   border-radius: 8px;
   margin: auto;
   padding: 0;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .example-card {
   display: grid;
   border-radius: 8px;
-  background-color: var(--colorpalette-red);
-  grid-template-rows: 15vh min(7vh, 36px);
+  background-color: #00000000;
+  grid-template-rows: 15vh auto min(5vh, 24px);
   box-shadow: 2px 2px 10px 2px #000000;
   opacity: 1;
   position: absolute;
@@ -674,17 +688,34 @@ li.inView {
   object-fit: cover;
 }
 
+.credits {
+  width: 100%;
+  height: 100%;
+  background-color: var(--colorpalette-black);
+  margin: 0;
+  padding: 2px 8px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
 .example-name {
   font-weight: 700;
-  margin: auto;
-  padding: auto;
+  width: 100%;
+  height: 100%;
+  background-color: var(--colorpalette-red);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 .example-description {
-  font-size: min(3.5vw, 1.5vh, 1rem);
+  font-size: min(3.5vw, 1.5vh, 1.5rem);
   position: absolute;
-  top: calc(15vh + min(7vh, 36px));
-  width: 100%;
+  top: calc(15vh + min(5vh, 24px) + min(5vh, 24px));
+  left: 5%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -719,15 +750,20 @@ li.inView {
   }
 }
 
-.example-description a {
+.example-description button {
   border: 1px solid #fff;
   padding: 4px;
   margin: 4px;
   background-color: var(--colorpalette-beige);
   color: #000;
+  transition: transform 0.2s ease-in-out;
 }
 
-.work-experience button {
+.example-description button:hover {
+  transform: scale(1.1);
+}
+
+.work-experience > button {
   margin: 2vh auto;
   padding: 4px;
   border: 0;
@@ -770,13 +806,13 @@ li.inView {
 }
 
 @media (min-aspect-ratio: 1.1) {
-  .work-experience {
+  .work-experience-container {
     height: calc(96vh - var(--navbar-height));
-    width: 96vw;
+    width: min(calc(50vw + 552px), 96vw);
     top: calc(var(--navbar-height) + 2vh);
   }
 
-  .work-experience > h2 {
+  .work-experience > h3 {
     margin: 0 auto;
   }
 
@@ -788,14 +824,13 @@ li.inView {
     position: relative;
     width: min(500px, 45vh);
     height: min(500px, 45vh);
-    margin: 0 auto;
     margin-left: calc(5vw + max(0px, 50vw - 600px));
     overflow: initial;
   }
 
   .example-card {
     grid-template-columns: min(500px, 45vh);
-    grid-template-rows: min(500px, 45vh) 36px;
+    grid-template-rows: min(500px, 45vh) auto 24px;
     top: 0;
     left: 10vw;
     width: min(500px, 45vh);
