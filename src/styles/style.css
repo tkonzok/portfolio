@@ -589,7 +589,12 @@ li.inView {
   height: 100%;
 }
 
-.next-example {
+.prev-next-buttons {
+  display: flex;
+}
+
+.next-example,
+.prev-example {
   display: flex;
   align-items: center;
   background-color: #00000000;
@@ -599,7 +604,8 @@ li.inView {
   margin: auto 0 16px;
 }
 
-.next-example img {
+.next-example img,
+.prev-example img {
   height: 36px;
 }
 
@@ -651,7 +657,7 @@ li.inView {
 .work-experience-carousel {
   position: relative;
   width: 80vw;
-  height: 70vh;
+  height: 66vh;
   border-radius: 8px;
   margin: auto;
   padding: 0;
@@ -849,7 +855,7 @@ li.inView {
   }
 
   .work-experience > h3 {
-    margin: 8px auto;
+    margin: 4vh auto 8px;
   }
 
   .work-experience > p {

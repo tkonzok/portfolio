@@ -11,7 +11,7 @@ function WorkExperience() {
     triggerOnce: true,
   });
 
-  const [article, setArticle] = useState(3);
+  const [article, setArticle] = useState(0);
 
   async function startNewInterval(msec) {
     await new Promise((resolve) => setTimeout(resolve, msec));
@@ -36,6 +36,14 @@ function WorkExperience() {
     }
   }
 
+  function handlePrevClick() {
+    if (article === 0) {
+      setArticle(3);
+    } else {
+      setArticle(article - 1);
+    }
+  }
+
   const config = {
     delta: 10,
     preventDefaultTouchMove: false,
@@ -46,14 +54,20 @@ function WorkExperience() {
 
   const handlers = useSwipeable({
     onSwipedLeft: () => handleNextClick(),
+    onSwipedRight: () => handlePrevClick(),
     ...config,
   });
 
   return (
     <div {...handlers}>
-      <button onClick={handleNextClick} className="next-example">
-        Next <img src={ArrowUp} alt="Arrow" className="turn-right-90" />
-      </button>
+      <div className="prev-next-buttons">
+        <button onClick={handlePrevClick} className="prev-example">
+          Prev <img src={ArrowUp} alt="Arrow" className="turn-left-90" />
+        </button>
+        <button onClick={handleNextClick} className="next-example">
+          <img src={ArrowUp} alt="Arrow" className="turn-right-90" /> Next
+        </button>
+      </div>
 
       <div className="work-experience-carousel" ref={ref}>
         <div
