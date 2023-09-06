@@ -21,7 +21,7 @@ function WorkExperience() {
   }
 
   useEffect(() => {
-    startNewInterval(8000);
+    startNewInterval(20000);
   }, [article, inView]);
 
   return (
