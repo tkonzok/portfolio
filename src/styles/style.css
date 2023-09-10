@@ -828,7 +828,7 @@ li.inView {
 .work-experience > button.close-cross {
   position: absolute;
   top: 2vh;
-  right: 2vh;
+  left: 2vh;
   width: 36px;
   height: 36px;
   border: 0;
@@ -884,7 +884,7 @@ li.inView {
 
   .work-experience > button.close-cross {
     top: 4vh;
-    right: 4vh;
+    left: 4vh;
     width: 48px;
     height: 48px;
   }
