@@ -1,6 +1,5 @@
 import "../styles/style.css";
 import Links from "./Links.jsx";
-import EmailWhite from "../assets/icons/email_white.svg";
 import ContactImg160 from "../assets/images/profile-pic-02_160.jpg";
 import ContactImg320 from "../assets/images/profile-pic-02_320.jpg";
 import ContactImg640 from "../assets/images/profile-pic-02_640.jpg";

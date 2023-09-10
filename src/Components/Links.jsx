@@ -6,7 +6,7 @@ import LinkedinWhite from "../assets/icons/linkedin_white.svg";
 import XingWhite from "../assets/icons/xing_white.svg";
 
 function Links({ effect }) {
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0,
     triggerOnce: true,
   });
@@ -44,7 +44,7 @@ function Links({ effect }) {
         <img src={LinkedinWhite} alt="LinkedIN icon" className="linkedin" />
       </a>
       <a
-        href="https://xing.com/profile/tobias_konzok"
+        href="https://xing.com/profile/tobias_konzok/cv"
         className={
           inView && effect === "slide-in"
             ? "link slide-in from-left delay0-5"

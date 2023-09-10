@@ -534,7 +534,7 @@ nav.bg-red h3 {
   transform: scale(1.1);
 }
 
-.show-modal {
+.show-experience {
   margin: 0;
   margin-right: auto;
   padding: 0;
@@ -547,7 +547,7 @@ nav.bg-red h3 {
   cursor: pointer;
 }
 
-.show-modal:hover {
+.show-experience:hover {
   transform: scale(1.1);
 }
 

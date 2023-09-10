@@ -1,5 +1,4 @@
-import PropTypes from "prop-types";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import "../styles/style.css";
 import ProfileImg160 from "../assets/images/profile-pic-01_160.jpg";
@@ -11,7 +10,7 @@ import ReactLogo from "../assets/icons/react.svg";
 import PythonLogo from "../assets/icons/python.svg";
 
 function ProfileImage() {
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0,
     triggerOnce: true,
   });
@@ -52,7 +51,7 @@ function TechStack() {
 }
 
 function Buzzwords() {
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0,
     triggerOnce: true,
   });

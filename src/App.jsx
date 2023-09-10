@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import "./styles/normalize.css";
 import "./styles/style.css";
@@ -12,6 +12,8 @@ import Footer from "./Components/Footer.jsx";
 import ArrowUp from "./assets/icons/arrow-up-bold-circle.svg";
 
 function App() {
+  // inView refs used to indicate current chapter in menu/nav
+  // threshold larger 0 prevents from jumping over to next page once a single line is visible but later
   const [refHero, inViewHero] = useInView({
     threshold: 0.01,
     delay: 100,

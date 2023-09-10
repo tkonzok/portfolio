@@ -1,12 +1,9 @@
-import PropTypes from "prop-types";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useSwipeable } from "react-swipeable";
 import "../styles/style.css";
 import Dataset from "../assets/data.json";
-import Github from "../assets/icons/github.svg";
 import GithubWhite from "../assets/icons/github_white.svg";
-import Open from "../assets/icons/open-in-new.svg";
 import OpenWhite from "../assets/icons/open-in-new_white.svg";
 import ArrowUp from "../assets/icons/arrow-up-bold-circle.svg";
 import HtmlLogo from "../assets/icons/html.svg";
@@ -29,6 +26,7 @@ function Projects() {
   const [nextProject, setNextProject] = useState(3);
   const [nextButOneProject, setNextButOneProject] = useState(4);
 
+  // representing currently running transition as states
   const [toPrev, setToPrev] = useState(0);
   const [toNext, setToNext] = useState(0);
 
@@ -51,13 +49,13 @@ function Projects() {
   }
 
   function handlePrevClick() {
+    // start transition
     setToPrev(1);
+    // update content after transition has finished
     setTimeout(() => {
       setCurrProject(prevProject);
       setPrevProject(penultimateProject);
       setNextProject(currProject);
-    }, animationDuration);
-    setTimeout(() => {
       if (penultimateProject === 2) {
         setPenultimateProject(numberProjectsToShow + 1);
         setNextButOneProject(nextProject);
@@ -65,23 +63,23 @@ function Projects() {
         setPenultimateProject(penultimateProject - 1);
         setNextButOneProject(nextProject);
       }
-      setToPrev(0);
     }, animationDuration);
   }
 
+  // end transition
   useEffect(() => {
     setToPrev(0);
     setToNext(0);
   }, [currProject]);
 
   function handleNextClick() {
+    // start transition
     setToNext(1);
+    // update content after transition has finished
     setTimeout(() => {
       setCurrProject(nextProject);
       setPrevProject(currProject);
       setNextProject(nextButOneProject);
-    }, animationDuration);
-    setTimeout(() => {
       if (nextButOneProject === numberProjectsToShow + 1) {
         setPenultimateProject(prevProject);
         setNextButOneProject(2);
@@ -89,11 +87,10 @@ function Projects() {
         setPenultimateProject(prevProject);
         setNextButOneProject(nextButOneProject + 1);
       }
-      setToNext(0);
     }, animationDuration);
   }
 
-  const config = {
+  const swipeConfig = {
     delta: 10,
     preventDefaultTouchMove: false,
     trackTouch: true,
@@ -101,13 +98,14 @@ function Projects() {
     rotationAngle: 0,
   };
 
-  const handlers = useSwipeable({
+  const swipeHandlers = useSwipeable({
     onSwipedLeft: () => handleNextClick(),
     onSwipedRight: () => handlePrevClick(),
-    ...config,
+    ...swipeConfig,
   });
 
   function Description({ project }) {
+    // remove html code from descriptions (can be simplified once data.json has been updated)
     let result = project.description.split("<a href='").join("/split");
     result = result.split("'>").join("/split");
     result = result.split("</a>").join("/split");
@@ -212,7 +210,7 @@ function Projects() {
             : "project-carousel-container"
         }
       >
-        <div {...handlers} className="project-carousel">
+        <div {...swipeHandlers} className="project-carousel">
           <div
             className="penultimateProject project-card"
             toprev={toPrev}

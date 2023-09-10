@@ -1,5 +1,5 @@
 import "../styles/style.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { useInView } from "react-intersection-observer";
 import Links from "./Links.jsx";
@@ -7,27 +7,7 @@ import ArrowUp from "../assets/icons/arrow-up-bold-circle.svg";
 import CloseWhite from "../assets/icons/close-white.svg";
 
 function WorkExperience() {
-  const { ref, inView } = useInView({
-    threshold: 0,
-    triggerOnce: true,
-  });
-
   const [article, setArticle] = useState(0);
-
-  async function startNewInterval(msec) {
-    await new Promise((resolve) => setTimeout(resolve, msec));
-    if (article < 3) {
-      setArticle(article + 1);
-    } else {
-      setArticle(0);
-    }
-  }
-
-  /*
-  useEffect(() => {
-    startNewInterval(20000);
-  }, [article, inView]);
-  */
 
   function handleNextClick() {
     if (article < 3) {
@@ -45,7 +25,7 @@ function WorkExperience() {
     }
   }
 
-  const config = {
+  const swipeConfig = {
     delta: 10,
     preventDefaultTouchMove: false,
     trackTouch: true,
@@ -53,14 +33,14 @@ function WorkExperience() {
     rotationAngle: 0,
   };
 
-  const handlers = useSwipeable({
+  const swipeHandlers = useSwipeable({
     onSwipedLeft: () => handleNextClick(),
     onSwipedRight: () => handlePrevClick(),
-    ...config,
+    ...swipeConfig,
   });
 
   return (
-    <div {...handlers}>
+    <div {...swipeHandlers}>
       <div className="prev-next-buttons">
         <button onClick={handlePrevClick} className="prev-example">
           Prev <img src={ArrowUp} alt="Arrow" className="turn-left-90" />
@@ -70,7 +50,7 @@ function WorkExperience() {
         </button>
       </div>
 
-      <div className="work-experience-carousel" ref={ref}>
+      <div className="work-experience-carousel">
         <div
           className={
             article === 0 ? "example-card visible" : "example-card invisible"
@@ -265,7 +245,7 @@ function WorkExperience() {
 
 function About() {
   const [showMore, setShowMore] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  const [showExperience, setShowExperience] = useState(false);
 
   const [ref1, inView1] = useInView({
     threshold: 0,
@@ -308,7 +288,7 @@ function About() {
               <a href="https://theodinproject.com/about">
                 <u>The Odin Project</u>
               </a>{" "}
-              in 12 weeks full-time, enabling me to build frontend as well as
+              in 3 months full-time, enabling me to build frontend as well as
               fullstack applications with{" "}
               <b>JavaScript, React, Node.js, Express.js and MongoDB</b>.
               Together with a huge Discord community in the back it not only
@@ -334,7 +314,10 @@ function About() {
               Commissioning and Handover
             </li>
           </ul>
-          <button className="show-modal" onClick={() => setShowModal(true)}>
+          <button
+            className="show-experience"
+            onClick={() => setShowExperience(true)}
+          >
             More about my work experience
           </button>
         </div>
@@ -380,7 +363,7 @@ function About() {
       </div>
       <div
         className={
-          showModal
+          showExperience
             ? "work-experience-container visible"
             : "work-experience-container"
         }
@@ -388,14 +371,20 @@ function About() {
         <div className="work-experience">
           <h3>Work Experience</h3>
           <p>
-            These are projects I was technically responsible for the video
-            system:
+            These are projects in which I was technically responsible for the
+            video system:
           </p>
           <WorkExperience />
-          <button className="close-modal" onClick={() => setShowModal(false)}>
+          <button
+            className="close-modal"
+            onClick={() => setShowExperience(false)}
+          >
             Return to main page
           </button>
-          <button className="close-cross" onClick={() => setShowModal(false)}>
+          <button
+            className="close-cross"
+            onClick={() => setShowExperience(false)}
+          >
             <img src={CloseWhite} alt="Cross" />
           </button>
         </div>
