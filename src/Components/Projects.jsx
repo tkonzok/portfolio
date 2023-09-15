@@ -15,6 +15,11 @@ import JestLogo from "../assets/icons/jest.svg";
 import ReactLogo from "../assets/icons/react.svg";
 import ViteLogo from "../assets/icons/vite.svg";
 import VitestLogo from "../assets/icons/vitest.svg";
+import NodeLogo from "../assets/icons/nodejs.svg";
+import ExpressLogo from "../assets/icons/express.svg";
+import MongoDBLogo from "../assets/icons/mongodb.svg";
+import PugLogo from "../assets/icons/pug.svg";
+import BootstrapLogo from "../assets/icons/bootstrap.svg";
 
 function Projects() {
   const animationDuration = 500; // milliseconds
@@ -132,6 +137,11 @@ function Projects() {
     if (techs.includes("react")) result.push(ReactLogo);
     if (techs.includes("vite")) result.push(ViteLogo);
     if (techs.includes("vitest")) result.push(VitestLogo);
+    if (techs.includes("nodejs")) result.push(NodeLogo);
+    if (techs.includes("express")) result.push(ExpressLogo);
+    if (techs.includes("mongodb")) result.push(MongoDBLogo);
+    if (techs.includes("pug")) result.push(PugLogo);
+    if (techs.includes("bootstrap")) result.push(BootstrapLogo);
     const results = result.map((tech, index) => (
       <img
         key={index}

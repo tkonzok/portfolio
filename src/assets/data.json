@@ -17,6 +17,14 @@
       "technologies": ["html", "css", "javascript", "react", "vite"]
     },
     {
+      "title": "Members Only",
+      "description": "Express project on days 54 - 55 of <a href='https://theodinproject.com/lessons/nodejs-members-only'>'The Odin Project' web development course</a>. Main focus on give authorized users exculsive access, using Express.js and MongoDB.",
+      "screenshot": "Screenshot_Members_Only",
+      "github": "https://github.com/tkonzok/odin-members-only",
+      "livePreview": "https://tkonzok-odin-members-only.fly.dev/",
+      "technologies": ["nodejs", "express", "mongodb", "pug", "bootstrap"]
+    },
+    {
       "title": "Fake Shop",
       "description": "React project on days 43 - 45 of <a href='https://theodinproject.com/lessons/node-path-react-new-shopping-cart'>'The Odin Project' web development course</a>. Main focus on routing and testing React with Vitest.",
       "screenshot": "Screenshot_Shop",
