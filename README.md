@@ -2,7 +2,7 @@
 
 ![Preview](images/hero.png)
 
-<p align='center'>Personal Portfolio built with React. Containing hero, about, skills, projects and contact section.</p>
+<p align='center'>Personal Portfolio built with React. Containing a hero, about, skills, projects and contact section.</p>
 
 <h2>Demo</h2>
 
@@ -21,8 +21,8 @@
 
 - Navigation bar, collapsing to sidebar for mobile devices, changing background color when leaving hero section
 - Click on chapter to smoothly scroll to respective page
-- Mobile View: Swipe from right edge to the left to open sidebar. Slide anywhere from left to right to close it
-- Full responsiveness for screen sizes from 320 px width
+- Mobile View: Swipe from right edge to the left to open sidebar. Slide from left to right to close it
+- Full responsiveness for screen sizes larger than 320 px width
 - Animated cards in skills section showing name of skill instead of icon on hover and on tap
 - Projects section presenting sample projects, containing screenshot, short description, used technologies and links to the code on GitHub and the live preview
 - Preferred projects staged on top of projects section
