@@ -18,6 +18,11 @@ import PyTorchLogo from "../assets/icons/pytorch.svg";
 import NumpyLogo from "../assets/icons/numpy.svg";
 import TensorflowLogo from "../assets/icons/tensorflow.svg";
 import TypescriptLogo from "../assets/icons/typescript.svg";
+import AngularLogo from "../assets/icons/angular-original.svg";
+import JasmineLogo from "../assets/icons/jasmine-original.svg";
+import PulumiLogo from "../assets/icons/pulumi-original.svg";
+import TailwindLogo from "../assets/icons/tailwindcss-original.svg";
+import PlaywrightLogo from "../assets/icons/playwright-original.svg";
 
 function Skillset({ skillset, skillName, inView }) {
   const array = skillset.map((skill, index) => (
@@ -64,8 +69,8 @@ function Skills() {
         <div className="frontend" ref={ref1}>
           <h2>Frontend</h2>
           <Skillset
-            skillset={[HtmlLogo, CssLogo, JsLogo, ReactLogo]}
-            skillName={["HTML", "CSS", "JavaScript", "React"]}
+            skillset={[HtmlLogo, CssLogo, TypescriptLogo, JsLogo, ReactLogo, AngularLogo]}
+            skillName={["HTML", "CSS", "TypeScript", "JavaScript", "React", "Angular"]}
             inView={inView1}
           />
         </div>
@@ -82,6 +87,8 @@ function Skills() {
           <Skillset
             skillset={[
               GitLogo,
+                JasmineLogo,
+                PlaywrightLogo,
               WebpackLogo,
               ViteLogo,
               JestLogo,
@@ -91,6 +98,8 @@ function Skills() {
             ]}
             skillName={[
               "Git",
+                "Jasmine",
+                "Playwright",
               "webpack",
               "Vite",
               "Jest",
@@ -104,8 +113,8 @@ function Skills() {
         <div className="learning" ref={ref4}>
           <h2>Learning</h2>
           <Skillset
-            skillset={[TypescriptLogo, PyTorchLogo, TensorflowLogo]}
-            skillName={["TypeScript", "PyTorch", "TensorFlow"]}
+            skillset={[TailwindLogo, PulumiLogo, PyTorchLogo, TensorflowLogo]}
+            skillName={["Tailwind", "Pulumi", "PyTorch", "TensorFlow"]}
             inView={inView4}
           />
         </div>

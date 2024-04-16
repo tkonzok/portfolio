@@ -281,7 +281,7 @@ function About() {
             2023 to seize the opportunity to do something self-made yet
             meaningful.
           </p>
-          {showMore && (
+          {showMore && (<>
             <p>
               Already equipped with my IT background and solid coding skills in
               Python I worked through{" "}
@@ -296,6 +296,9 @@ function About() {
               control, how to test, simply how to transition to a professional
               step by step.
             </p>
+              <p>
+            By the end of 2023, I stepped into my first professional role as a Software Developer. Since then, I've taken every opportunity to expand my skill set, get into Angular and TypeScript to tackle my daily tasks with efficiently. The decision to pivot my career path has proven to be remarkably right, as I've seamlessly integrated into the world of software development.
+              </p></>
           )}
           <button className="show-more" onClick={() => setShowMore(!showMore)}>
             {showMore ? "Show less" : "Show more..."}
@@ -304,6 +307,9 @@ function About() {
         <div>
           <h2>Business Experience</h2>
           <ul ref={ref1}>
+            <li className={inView1 ? "inView" : ""}>
+              Software Development
+            </li>
             <li className={inView1 ? "inView" : ""}>
               Technical Presales Consulting
             </li>
@@ -315,8 +321,8 @@ function About() {
             </li>
           </ul>
           <button
-            className="show-experience"
-            onClick={() => setShowExperience(true)}
+              className="show-experience"
+              onClick={() => setShowExperience(true)}
           >
             More about my work experience
           </button>
@@ -324,10 +330,10 @@ function About() {
         <div>
           <h2>In-Depth Knowledge</h2>
           <ul ref={ref2}>
-            <li className={inView2 ? "inView" : ""}>AV/Media Technology</li>
             <li className={inView2 ? "inView" : ""}>
-              JavaScript, Python & Node.js
+              TypeScript, Angular, React, Python & Node.js
             </li>
+            <li className={inView2 ? "inView" : ""}>AV/Media Technology</li>
           </ul>
         </div>
         <div>
@@ -354,8 +360,8 @@ function About() {
         <div>
           <p>
             As a technically versed person with strong understanding of logical
-            relationships, I am motivated to take my next professional step in
-            IT industry and confident I'll be able to profitably contribute any
+            relationships, I took my next professional steps in
+            IT industry with a lot of motivation, always confident I'll be able to profitably contribute any
             team.
           </p>
           <Links effect="slide-in" />

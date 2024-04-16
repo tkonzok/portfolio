@@ -5,9 +5,10 @@ import ProfileImg160 from "../assets/images/profile-pic-01_160.jpg";
 import ProfileImg320 from "../assets/images/profile-pic-01_320.jpg";
 import ProfileImg640 from "../assets/images/profile-pic-01_640.jpg";
 import ProfileImg960 from "../assets/images/profile-pic-01_960.jpg";
-import JsLogo from "../assets/icons/javascript.svg";
 import ReactLogo from "../assets/icons/react.svg";
 import PythonLogo from "../assets/icons/python.svg";
+import TypeScriptLogo from "../assets/icons/typescript.svg";
+import AngularLogo from "../assets/icons/angular-original.svg";
 
 function ProfileImage() {
   const { ref, inView } = useInView({
@@ -36,22 +37,25 @@ function Name() {
 
 function TechStack() {
   return (
-    <div className="stack">
-      <div className="logo slide-in from-right delay2">
-        <img src={ReactLogo} alt="React Logo"></img>
+      <div className="stack">
+        <div className="logo slide-in from-right delay2">
+          <img src={AngularLogo} alt="Angular Logo"></img>
+        </div>
+        <div className="logo slide-in from-right delay3">
+          <img src={ReactLogo} alt="React Logo"></img>
+        </div>
+        <div className="logo slide-in from-right delay4">
+          <img src={TypeScriptLogo} alt="TypeScript Logo"></img>
+        </div>
+        <div className="logo slide-in from-right delay5">
+          <img src={PythonLogo} alt="Python Logo"></img>
+        </div>
       </div>
-      <div className="logo slide-in from-right delay3">
-        <img src={JsLogo} alt="JavaScript Logo"></img>
-      </div>
-      <div className="logo slide-in from-right delay4">
-        <img src={PythonLogo} alt="Python Logo"></img>
-      </div>
-    </div>
   );
 }
 
 function Buzzwords() {
-  const { ref, inView } = useInView({
+  const {ref, inView} = useInView({
     threshold: 0,
     triggerOnce: true,
   });
