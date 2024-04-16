@@ -22,7 +22,7 @@ function Contact() {
         <h1>Contact Me</h1>
         <div>
           <div className="contact-details">
-            <p>Open for new job opportunities. Feel free to get in touch.</p>
+            <p>Feel free to get in touch.</p>
             <Links />
           </div>
           <div className="contact-img-container">
