@@ -297,7 +297,7 @@ function About() {
               step by step.
             </p>
               <p>
-            By the end of 2023, I stepped into my first professional role as a Software Developer. Since then, I've taken every opportunity to expand my skill set, get into Angular and TypeScript to tackle my daily tasks with efficiently. The decision to pivot my career path has proven to be remarkably right, as I've seamlessly integrated into the world of software development.
+            By the end of 2023, I stepped into my first professional role as a Software Developer. Since then, I've taken every opportunity to expand my skill set, get into TypeScript with Angular and NestJS to tackle my daily tasks with efficiently. The decision to pivot my career path has proven to be remarkably right, as I've seamlessly integrated into the world of software development.
               </p></>
           )}
           <button className="show-more" onClick={() => setShowMore(!showMore)}>

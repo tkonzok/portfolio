@@ -23,6 +23,8 @@ import JasmineLogo from "../assets/icons/jasmine-original.svg";
 import PulumiLogo from "../assets/icons/pulumi-original.svg";
 import TailwindLogo from "../assets/icons/tailwindcss-original.svg";
 import PlaywrightLogo from "../assets/icons/playwright-original.svg";
+import NestLogo from "../assets/icons/nestjs.svg";
+import AzureDevOpsLogo from "../assets/icons/azuredevops-original.svg";
 
 function Skillset({ skillset, skillName, inView }) {
   const array = skillset.map((skill, index) => (
@@ -69,16 +71,16 @@ function Skills() {
         <div className="frontend" ref={ref1}>
           <h2>Frontend</h2>
           <Skillset
-            skillset={[HtmlLogo, CssLogo, TypescriptLogo, JsLogo, ReactLogo, AngularLogo]}
-            skillName={["HTML", "CSS", "TypeScript", "JavaScript", "React", "Angular"]}
+            skillset={[TypescriptLogo, AngularLogo, ReactLogo, HtmlLogo, CssLogo, JsLogo]}
+            skillName={["TypeScript", "Angular", "React", "HTML", "CSS", "JavaScript"]}
             inView={inView1}
           />
         </div>
         <div className="backend" ref={ref2}>
           <h2>Backend</h2>
           <Skillset
-            skillset={[PythonLogo, NodeLogo, ExpressLogo, MongoLogo]}
-            skillName={["Python", "Node.js", "Express.js", "MongoDB"]}
+            skillset={[NestLogo, PythonLogo, NodeLogo, ExpressLogo, MongoLogo]}
+            skillName={["Nest", "Python", "Node.js", "Express.js", "MongoDB"]}
             inView={inView2}
           />
         </div>
@@ -88,23 +90,17 @@ function Skills() {
             skillset={[
               GitLogo,
                 JasmineLogo,
-                PlaywrightLogo,
-              WebpackLogo,
-              ViteLogo,
               JestLogo,
+                PlaywrightLogo,
               VitestLogo,
-              NumpyLogo,
               PandasLogo,
             ]}
             skillName={[
               "Git",
-                "Jasmine",
-                "Playwright",
-              "webpack",
-              "Vite",
+              "Jasmine",
               "Jest",
+              "Playwright",
               "Vitest",
-              "NumPy",
               "Pandas",
             ]}
             inView={inView3}
@@ -113,8 +109,8 @@ function Skills() {
         <div className="learning" ref={ref4}>
           <h2>Learning</h2>
           <Skillset
-            skillset={[TailwindLogo, PulumiLogo, PyTorchLogo, TensorflowLogo]}
-            skillName={["Tailwind", "Pulumi", "PyTorch", "TensorFlow"]}
+            skillset={[AzureDevOpsLogo, PulumiLogo, TailwindLogo]}
+            skillName={["Azure DevOps", "Pulumi", "Tailwind"]}
             inView={inView4}
           />
         </div>

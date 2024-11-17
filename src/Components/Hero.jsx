@@ -9,6 +9,7 @@ import ReactLogo from "../assets/icons/react.svg";
 import PythonLogo from "../assets/icons/python.svg";
 import TypeScriptLogo from "../assets/icons/typescript.svg";
 import AngularLogo from "../assets/icons/angular-original.svg";
+import NestLogo from "../assets/icons/nestjs.svg";
 
 function ProfileImage() {
   const { ref, inView } = useInView({
@@ -48,6 +49,9 @@ function TechStack() {
           <img src={TypeScriptLogo} alt="TypeScript Logo"></img>
         </div>
         <div className="logo slide-in from-right delay5">
+          <img src={NestLogo} alt="NestJs Logo"></img>
+        </div>
+        <div className="logo slide-in from-right delay6">
           <img src={PythonLogo} alt="Python Logo"></img>
         </div>
       </div>

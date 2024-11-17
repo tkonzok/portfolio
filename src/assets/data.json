@@ -1,12 +1,20 @@
 {
   "data": [
     {
+      "title": "Fantasy Football Assistant",
+      "description": "An overview of my current fantasy football leagues and this week's matchups in fantasy football. Angular app with NestJs backend.",
+      "screenshot": "Screenshot_FF",
+      "github": "https://github.com/tkonzok/ff-sleeper-leagues",
+      "livePreview": "https://ff-sleeper-leagues.vercel.app/",
+      "technologies": ["angular", "nest", "typescript"]
+    },
+    {
       "title": "Commander Nilpfred Website",
       "description": "A new website for my punk rock band built with React. With use of CSS animations, scroll snap, a shop item carousel and much more.",
       "screenshot": "Screenshot_Nilpfred",
       "github": "https://github.com/tkonzok/nilpfred-website",
       "livePreview": "https://nilpfred-website.vercel.app/",
-      "technologies": ["html", "css", "javascript", "react", "vite"]
+      "technologies": ["react", "javascript", "vite"]
     },
     {
       "title": "Rick and Morty Memory Game",
@@ -15,14 +23,6 @@
       "github": "https://github.com/tkonzok/odin-memory-card",
       "livePreview": "https://rick-and-morty-memory.vercel.app/",
       "technologies": ["html", "css", "javascript", "react", "vite"]
-    },
-    {
-      "title": "Members Only",
-      "description": "Express project on days 54 - 55 of <a href='https://theodinproject.com/lessons/nodejs-members-only'>'The Odin Project' web development course</a>. Main focus on give authorized users exculsive access, using Express.js and MongoDB.",
-      "screenshot": "Screenshot_Members_Only",
-      "github": "https://github.com/tkonzok/odin-members-only",
-      "livePreview": "https://tkonzok-odin-members-only.fly.dev/",
-      "technologies": ["nodejs", "express", "mongodb", "pug", "bootstrap"]
     },
     {
       "title": "Fake Shop",
@@ -39,78 +39,6 @@
       "github": "https://github.com/tkonzok/odin-battleship-game",
       "livePreview": "https://tkonzok.github.io/odin-battleship-game",
       "technologies": ["html", "css", "javascript", "webpack", "jest"]
-    },
-    {
-      "title": "Interactive CV Generator",
-      "description": "React project on days 35 - 37 of <a href='https://theodinproject.com/lessons/node-path-react-new-cv-application'>'The Odin Project' web development course</a>. Main focus on using React, esp. useState hooks, Vite and Vercel.",
-      "screenshot": "Screenshot_CV-application",
-      "github": "https://github.com/tkonzok/odin-cv-application",
-      "livePreview": "https://tkonzok-odin-cv-application.vercel.app/",
-      "technologies": ["html", "css", "javascript", "react", "vite"]
-    },
-    {
-      "title": "Personal Portfolio v1",
-      "description": "HTML/CSS project on days 35 - 37 of <a href='https://theodinproject.com/lessons/node-path-advanced-html-and-css-personal-portfolio'>'The Odin Project' web development course</a>. Main focus on responsive web design.",
-      "screenshot": "Screenshot_Personal_Portfolio_v1",
-      "github": "https://github.com/tkonzok/odin-personal-portfolio",
-      "livePreview": "https://tkonzok.github.io/odin-personal-portfolio",
-      "technologies": ["html", "css", "javascript", "webpack"]
-    },
-    {
-      "title": "Weather App",
-      "description": "JavaScript project on day 22 of <a href='https://theodinproject.com/lessons/node-path-javascript-weather-app'>'The Odin Project' web development course</a>. Main focus on async functions / promises and APIs.",
-      "screenshot": "Screenshot_Weather",
-      "github": "https://github.com/tkonzok/odin-weather-app",
-      "livePreview": "https://tkonzok.github.io/odin-weather-app",
-      "technologies": ["html", "css", "javascript", "webpack"]
-    },
-    {
-      "title": "To Do List",
-      "description": "JavaScript project on day 19 of <a href='https://theodinproject.com/lessons/node-path-javascript-todo-list'>'The Odin Project' web development course</a>. Main focus on object oriented programming, factory functions and classes.",
-      "screenshot": "Screenshot_ToDo",
-      "github": "https://github.com/tkonzok/odin-to-do-list",
-      "livePreview": "https://tkonzok.github.io/odin-to-do-list",
-      "technologies": ["html", "css", "javascript", "webpack"]
-    },
-    {
-      "title": "Admin Dashboard",
-      "description": "HTML/CSS project on day 13 of <a href='https://theodinproject.com/lessons/node-path-intermediate-html-and-css-admin-dashboard'>'The Odin Project' web development course</a>. Main focus on CSS Grid.",
-      "screenshot": "Screenshot_Dashboard",
-      "github": "https://github.com/tkonzok/odin-admin-dashboard",
-      "livePreview": "https://tkonzok.github.io/odin-admin-dashboard",
-      "technologies": ["html", "css"]
-    },
-    {
-      "title": "Rock Paper Scissors",
-      "description": "JavaScript project on day 6 of <a href='https://theodinproject.com/lessons/foundations-rock-paper-scissors'>'The Odin Project' web development course</a>. Building a first JavaScript project from scratch and get used to using Git.",
-      "screenshot": "Screenshot_RPS",
-      "github": "https://github.com/tkonzok/odin-rock-paper-scissors",
-      "livePreview": "https://tkonzok.github.io/odin-rock-paper-scissors",
-      "technologies": ["html", "css", "javascript"]
-    },
-    {
-      "title": "Tic Tac Toe",
-      "description": "JavaScript project on day 15 of <a href='https://theodinproject.com/lessons/node-path-javascript-tic-tac-toe'>'The Odin Project' web development course</a>. Main focus on factory functions and module pattern.",
-      "screenshot": "Screenshot_Tic-Tac-Toe",
-      "github": "https://github.com/tkonzok/odin-tic-tac-toe",
-      "livePreview": "https://tkonzok.github.io/odin-tic-tac-toe",
-      "technologies": ["html", "css", "javascript"]
-    },
-    {
-      "title": "Etch-A-Sketch",
-      "description": "JavaScript project on day 7 of <a href='https://theodinproject.com/lessons/foundations-etch-a-sketch'>'The Odin Project' web development course</a>. Main focus on DOM manipulation and event listeners.",
-      "screenshot": "Screenshot_Etch-A-Sketch",
-      "github": "https://github.com/tkonzok/odin-etch-a-sketch",
-      "livePreview": "https://tkonzok.github.io/odin-etch-a-sketch",
-      "technologies": ["html", "css", "javascript"]
-    },
-    {
-      "title": "Landing Page",
-      "description": "HTML/CSS project on day 3 of <a href='https://theodinproject.com/lessons/foundations-landing-page'>'The Odin Project' web development course</a>. Main focus on CSS Flexbox.",
-      "screenshot": "Screenshot_Landing",
-      "github": "https://github.com/tkonzok/odin-landing-page",
-      "livePreview": "https://tkonzok.github.io/odin-landing-page",
-      "technologies": ["html", "css"]
     }
   ]
 }

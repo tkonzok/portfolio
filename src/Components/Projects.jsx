@@ -20,10 +20,13 @@ import ExpressLogo from "../assets/icons/express.svg";
 import MongoDBLogo from "../assets/icons/mongodb.svg";
 import PugLogo from "../assets/icons/pug.svg";
 import BootstrapLogo from "../assets/icons/bootstrap.svg";
+import AngularLogo from "../assets/icons/angular-original.svg";
+import NestLogo from "../assets/icons/nestjs.svg";
+import TypescriptLogo from "../assets/icons/typescript.svg";
 
 function Projects() {
   const animationDuration = 500; // milliseconds
-  const numberProjectsToShow = 8; // number of projects to fetch from data to prevent showing the older ones
+  const numberProjectsToShow = 3; // number of projects to fetch from data to prevent showing the older ones
   const [penultimateProject, setPenultimateProject] =
     useState(numberProjectsToShow);
   const [prevProject, setPrevProject] = useState(numberProjectsToShow + 1);
@@ -128,13 +131,16 @@ function Projects() {
   function Technologies({ project }) {
     let result = [];
     let techs = project.technologies;
+    if (techs.includes("angular")) result.push(AngularLogo);
+    if (techs.includes("react")) result.push(ReactLogo);
+    if (techs.includes("nest")) result.push(NestLogo);
+    if (techs.includes("typescript")) result.push(TypescriptLogo);
+    if (techs.includes("javascript")) result.push(JsLogo);
     if (techs.includes("html")) result.push(HtmlLogo);
     if (techs.includes("css")) result.push(CssLogo);
-    if (techs.includes("javascript")) result.push(JsLogo);
     if (techs.includes("webpack")) result.push(WebpackLogo);
     if (techs.includes("babel")) result.push(BabelLogo);
     if (techs.includes("jest")) result.push(JestLogo);
-    if (techs.includes("react")) result.push(ReactLogo);
     if (techs.includes("vite")) result.push(ViteLogo);
     if (techs.includes("vitest")) result.push(VitestLogo);
     if (techs.includes("nodejs")) result.push(NodeLogo);
